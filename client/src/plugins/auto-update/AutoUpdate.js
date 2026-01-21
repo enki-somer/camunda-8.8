@@ -10,9 +10,11 @@
 
 import React, { PureComponent } from 'react';
 
+import debug from 'debug';
+
 import Modal from '../../shared/ui/modal/Modal';
 
-const log = require('debug')('AutoUpdate');
+const log = debug('AutoUpdate');
 
 export default class AutoUpdate extends PureComponent {
 
@@ -80,12 +82,14 @@ export default class AutoUpdate extends PureComponent {
         progress: 100
       });
     } else if (state.state === 'error') {
+
       // Log error but don't show UI (non-intrusive)
       log.error('Update error:', state.info?.error);
       this.setState({
         showModal: false
       });
     } else if (state.state === 'idle') {
+
       // No update available, close modal if open
       if (this.state.type === 'available' && this.state.progress === 0) {
         this.setState({ showModal: false });

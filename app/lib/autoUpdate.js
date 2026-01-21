@@ -127,6 +127,7 @@ function initAutoUpdate() {
     log.info('Auto-updater initialized');
   } catch (error) {
     log.error('Failed to initialize auto-updater:', error);
+
     // Never throw - app must continue normally
   }
 }
@@ -146,6 +147,7 @@ function checkForUpdatesSafe() {
     });
   } catch (error) {
     log.error('Error in checkForUpdatesSafe:', error);
+
     // Never throw - app must continue normally
   }
 }
@@ -182,6 +184,7 @@ function quitAndInstallSafe() {
     autoUpdater.quitAndInstall(false, true);
   } catch (error) {
     log.error('Error in quitAndInstallSafe:', error);
+
     // Never throw - app must continue normally
   }
 }

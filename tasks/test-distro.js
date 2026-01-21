@@ -61,19 +61,19 @@ const expectedFiles = {
   win: [
     {
       name: 'camunda-modeler-${version}-win-setup.exe',
-      archs: [ 'x64' ],
+      archs: archs.filter(a => a === 'x64'), // Only x64 for NSIS
       contents: null, // NSIS installer, can't easily verify contents
       optional: false
     },
     {
       name: 'camunda-modeler-${version}-win-setup.exe.blockmap',
-      archs: [ 'x64' ],
+      archs: archs.filter(a => a === 'x64'), // Only x64 for NSIS
       contents: null, // Blockmap file for electron-updater
       optional: false
     },
     {
       name: 'latest.yml',
-      archs: [ 'x64' ],
+      archs: archs.filter(a => a === 'x64'), // Only x64 for NSIS
       contents: null, // Update metadata for electron-updater (only when publishing)
       optional: true
     }

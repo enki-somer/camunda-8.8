@@ -1,0 +1,1192 @@
+Run npm run all -- --x64 --no-compress
+
+> camunda-modeler-builder@0.0.0 all
+> run-s clean lint test "build -- {@}" -- --x64 --no-compress
+
+
+> camunda-modeler-builder@0.0.0 clean
+> del-cli 'dist/*' app/public
+
+
+> camunda-modeler-builder@0.0.0 lint
+> eslint .
+
+
+D:\a\camunda-8.8\camunda-8.8\app\lib\autoUpdate.js
+Error:   130:5  error  Expected line before comment  lines-around-comment
+Error:   149:5  error  Expected line before comment  lines-around-comment
+Error:   185:5  error  Expected line before comment  lines-around-comment
+
+D:\a\camunda-8.8\camunda-8.8\app\lib\index.js
+Error:   464:5   error  Expected line before comment    lines-around-comment
+Error:   467:7   error  Expected line before comment    lines-around-comment
+Error:   468:65  error  A space is required after '['   array-bracket-spacing
+Error:   468:70  error  A space is required before ']'  array-bracket-spacing
+Error:   473:65  error  A space is required after '['   array-bracket-spacing
+Error:   473:70  error  A space is required before ']'  array-bracket-spacing
+Error:   711:5   error  Expected line before comment    lines-around-comment
+
+D:\a\camunda-8.8\camunda-8.8\app\lib\menu\menu-builder.js
+Error:   649:11  error  Expected line before comment  lines-around-comment
+Error:   654:13  error  Expected line before comment  lines-around-comment
+
+D:\a\camunda-8.8\camunda-8.8\client\src\app\tabs\bpmn\modeler\BpmnModeler.js
+Error:   11:25  error  Strings must use singlequote    quotes
+Error:   13:31  error  Strings must use singlequote    quotes
+Error:   15:41  error  Strings must use singlequote    quotes
+Error:   16:35  error  Strings must use singlequote    quotes
+Error:   17:35  error  Strings must use singlequote    quotes
+Error:   18:51  error  Strings must use singlequote    quotes
+Error:   19:38  error  Strings must use singlequote    quotes
+Error:   21:50  error  Strings must use singlequote    quotes
+Error:   23:32  error  Strings must use singlequote    quotes
+Error:   24:38  error  Strings must use singlequote    quotes
+Error:   25:30  error  Strings must use singlequote    quotes
+Error:   26:31  error  Strings must use singlequote    quotes
+Error:   27:29  error  Strings must use singlequote    quotes
+Error:   28:42  error  Strings must use singlequote    quotes
+Error:   29:34  error  Strings must use singlequote    quotes
+Error:   30:42  error  Strings must use singlequote    quotes
+Error:   32:46  error  Strings must use singlequote    quotes
+Error:   43:22  error  Strings must use singlequote    quotes
+Error:   47:24  error  A space is required after '['   array-bracket-spacing
+Error:   47:49  error  A space is required before ']'  array-bracket-spacing
+Error:   48:46  error  A space is required after '['   array-bracket-spacing
+Error:   48:47  error  Strings must use singlequote    quotes
+Error:   48:60  error  A space is required before ']'  array-bracket-spacing
+Error:   49:33  error  A space is required after '['   array-bracket-spacing
+Error:   49:34  error  Strings must use singlequote    quotes
+Error:   49:47  error  A space is required before ']'  array-bracket-spacing
+Error:   50:25  error  A space is required after '['   array-bracket-spacing
+Error:   50:26  error  Strings must use singlequote    quotes
+Error:   50:39  error  A space is required before ']'  array-bracket-spacing
+
+D:\a\camunda-8.8\camunda-8.8\client\src\app\tabs\cloud-bpmn\modeler\BpmnModeler.js
+Error:   11:25  error  Strings must use singlequote                  quotes
+Error:   13:31  error  Strings must use singlequote                  quotes
+Error:   15:41  error  Strings must use singlequote                  quotes
+Error:   16:35  error  Strings must use singlequote                  quotes
+Error:   17:35  error  Strings must use singlequote                  quotes
+Error:   18:51  error  Strings must use singlequote                  quotes
+Error:   19:38  error  Strings must use singlequote                  quotes
+Error:   21:50  error  Strings must use singlequote                  quotes
+Error:   23:32  error  Strings must use singlequote                  quotes
+Error:   24:30  error  Strings must use singlequote                  quotes
+Error:   25:31  error  Strings must use singlequote                  quotes
+Error:   26:30  error  Strings must use singlequote                  quotes
+Error:   27:31  error  Strings must use singlequote                  quotes
+Error:   28:29  error  Strings must use singlequote                  quotes
+Error:   29:29  error  Strings must use singlequote                  quotes
+Error:   30:42  error  Strings must use singlequote                  quotes
+Error:   31:35  error  Strings must use singlequote                  quotes
+Error:   32:39  error  Strings must use singlequote                  quotes
+Error:   33:42  error  Strings must use singlequote                  quotes
+Error:   34:34  error  Strings must use singlequote                  quotes
+Error:   36:42  error  Strings must use singlequote                  quotes
+Error:   38:46  error  Strings must use singlequote                  quotes
+Error:   49:22  error  Strings must use singlequote                  quotes
+Error:   53:24  error  A space is required after '['                 array-bracket-spacing
+Error:   53:49  error  A space is required before ']'                array-bracket-spacing
+Error:   54:46  error  A space is required after '['                 array-bracket-spacing
+Error:   54:47  error  Strings must use singlequote                  quotes
+Error:   54:60  error  A space is required before ']'                array-bracket-spacing
+Error:   55:33  error  A space is required after '['                 array-bracket-spacing
+Error:   55:34  error  Strings must use singlequote                  quotes
+Error:   55:47  error  A space is required before ']'                array-bracket-spacing
+Error:   56:25  error  A space is required after '['                 array-bracket-spacing
+Error:   56:26  error  Strings must use singlequote                  quotes
+Error:   56:39  error  A space is required before ']'                array-bracket-spacing
+Error:   90:1   error  Expected indentation of 2 spaces but found 1  indent
+
+D:\a\camunda-8.8\camunda-8.8\client\src\plugins\auto-update\AutoUpdate.js
+Error:   15:13  error  'require' is not defined      no-undef
+Error:   83:7   error  Expected line before comment  lines-around-comment
+Error:   89:7   error  Expected line before comment  lines-around-comment
+
+D:\a\camunda-8.8\camunda-8.8\client\src\plugins\bpmn-color-plugin\ColorContextPadProvider.js
+Error:    1:1   error  Missing license header                        license-header/header
+Error:   11:35  error  A space is required after '['                 array-bracket-spacing
+Error:   11:36  error  Strings must use singlequote                  quotes
+Error:   11:50  error  Strings must use singlequote                  quotes
+Error:   11:60  error  A space is required before ']'                array-bracket-spacing
+Error:   13:66  error  Unexpected space before function parentheses  space-before-function-paren
+Error:   14:46  error  Strings must use singlequote                  quotes
+Error:   26:5   error  Strings must use singlequote                  quotes
+Error:   27:14  error  Strings must use singlequote                  quotes
+Error:   28:18  error  Strings must use singlequote                  quotes
+Error:   29:14  error  Strings must use singlequote                  quotes
+Error:   31:24  error  Unexpected space before function parentheses  space-before-function-paren
+
+D:\a\camunda-8.8\camunda-8.8\client\src\plugins\bpmn-color-plugin\ColorManagementPlugin.js
+Error:     1:1   error  Missing license header                                                           license-header/header
+Error:     1:26  error  Strings must use singlequote                                                     quotes
+Error:     2:22  error  Strings must use singlequote                                                     quotes
+Error:     3:20  error  'svgAppend' is defined but never used. Allowed unused vars must match /^_/u      no-unused-vars
+Error:     3:54  error  Strings must use singlequote                                                     quotes
+Error:     4:37  error  Strings must use singlequote                                                     quotes
+Error:     5:8   error  Strings must use singlequote                                                     quotes
+Error:     8:1   error  Expected indentation of 4 spaces but found 2                                     indent
+Error:     9:1   error  Expected indentation of 4 spaces but found 2                                     indent
+Error:    10:1   error  Expected indentation of 4 spaces but found 2                                     indent
+Error:    11:1   error  Expected indentation of 4 spaces but found 2                                     indent
+Error:    12:1   error  Expected indentation of 4 spaces but found 2                                     indent
+Error:    13:1   error  Expected indentation of 4 spaces but found 2                                     indent
+Error:    14:1   error  Expected indentation of 4 spaces but found 2                                     indent
+Error:    15:1   error  Expected indentation of 4 spaces but found 2                                     indent
+Error:    16:1   error  Expected indentation of 4 spaces but found 2                                     indent
+Error:    37:5   error  Strings must use singlequote                                                     quotes
+Error:    37:24  error  Strings must use singlequote                                                     quotes
+Error:    38:5   error  Strings must use singlequote                                                     quotes
+Error:    38:36  error  Strings must use singlequote                                                     quotes
+Error:    39:5   error  Strings must use singlequote                                                     quotes
+Error:    39:36  error  Strings must use singlequote                                                     quotes
+Error:    40:5   error  Strings must use singlequote                                                     quotes
+Error:    40:22  error  Strings must use singlequote                                                     quotes
+Error:    41:5   error  Strings must use singlequote                                                     quotes
+Error:    41:30  error  Strings must use singlequote                                                     quotes
+Error:    42:5   error  Strings must use singlequote                                                     quotes
+Error:    42:29  error  Strings must use singlequote                                                     quotes
+Error:    43:5   error  Strings must use singlequote                                                     quotes
+Error:    43:30  error  Strings must use singlequote                                                     quotes
+Error:    44:5   error  Strings must use singlequote                                                     quotes
+Error:    44:18  error  Strings must use singlequote                                                     quotes
+Error:    45:5   error  Strings must use singlequote                                                     quotes
+Error:    45:25  error  Strings must use singlequote                                                     quotes
+Error:    46:5   error  Strings must use singlequote                                                     quotes
+Error:    46:22  error  Strings must use singlequote                                                     quotes
+Error:    47:5   error  Strings must use singlequote                                                     quotes
+Error:    47:24  error  Strings must use singlequote                                                     quotes
+Error:    48:5   error  Strings must use singlequote                                                     quotes
+Error:    48:24  error  Strings must use singlequote                                                     quotes
+Error:    49:5   error  Strings must use singlequote                                                     quotes
+Error:    49:30  error  Strings must use singlequote                                                     quotes
+Error:    50:5   error  Strings must use singlequote                                                     quotes
+Error:    50:22  error  Strings must use singlequote                                                     quotes
+Error:    51:5   error  Strings must use singlequote                                                     quotes
+Error:    51:25  error  Strings must use singlequote                                                     quotes
+Error:    52:5   error  Strings must use singlequote                                                     quotes
+Error:    52:24  error  Strings must use singlequote                                                     quotes
+Error:    60:5   error  Strings must use singlequote                                                     quotes
+Error:    61:5   error  Strings must use singlequote                                                     quotes
+Error:    62:5   error  Strings must use singlequote                                                     quotes
+Error:    63:5   error  Strings must use singlequote                                                     quotes
+Error:    64:5   error  Strings must use singlequote                                                     quotes
+Error:    65:5   error  Strings must use singlequote                                                     quotes
+Error:    66:5   error  Strings must use singlequote                                                     quotes
+Error:    67:5   error  Strings must use singlequote                                                     quotes
+Error:    68:5   error  Strings must use singlequote                                                     quotes
+Error:    69:5   error  Strings must use singlequote                                                     quotes
+Error:    70:5   error  Strings must use singlequote                                                     quotes
+Error:    71:5   error  Strings must use singlequote                                                     quotes
+Error:    72:5   error  Strings must use singlequote                                                     quotes
+Error:    73:5   error  Strings must use singlequote                                                     quotes
+Error:    74:5   error  Strings must use singlequote                                                     quotes
+Error:    75:5   error  Strings must use singlequote                                                     quotes
+Error:    76:5   error  Strings must use singlequote                                                     quotes
+Error:    77:5   error  Strings must use singlequote                                                     quotes
+Error:    78:5   error  Strings must use singlequote                                                     quotes
+Error:    79:5   error  Strings must use singlequote                                                     quotes
+Error:    80:5   error  Strings must use singlequote                                                     quotes
+Error:    96:62  error  Unexpected space before function parentheses                                     space-before-function-paren
+Error:   100:15  error  Strings must use singlequote                                                     quotes
+Error:   105:15  error  Strings must use singlequote                                                     quotes
+Error:   112:15  error  Strings must use singlequote                                                     quotes
+Error:   114:5   error  Expected line before comment                                                     lines-around-comment
+Error:   115:37  error  Strings must use singlequote                                                     quotes
+Error:   116:7   error  Expected line before comment                                                     lines-around-comment
+Error:   120:9   error  Expected line before comment                                                     lines-around-comment
+Error:   127:15  error  Strings must use singlequote                                                     quotes
+Error:   130:37  error  Strings must use singlequote                                                     quotes
+Error:   131:7   error  Expected line before comment                                                     lines-around-comment
+Error:   141:15  error  Strings must use singlequote                                                     quotes
+Error:   142:5   error  Expected line before comment                                                     lines-around-comment
+Error:   147:11  error  Expected line before comment                                                     lines-around-comment
+Error:   148:32  error  Strings must use singlequote                                                     quotes
+Error:   149:13  error  Expected line before comment                                                     lines-around-comment
+Error:   152:15  error  Expected line before comment                                                     lines-around-comment
+Error:   154:31  error  Strings must use singlequote                                                     quotes
+Error:   171:65  error  Unexpected space before function parentheses                                     space-before-function-paren
+Error:   176:5   error  Strings must use singlequote                                                     quotes
+Error:   177:5   error  Strings must use singlequote                                                     quotes
+Error:   178:5   error  Strings must use singlequote                                                     quotes
+Error:   179:5   error  Strings must use singlequote                                                     quotes
+Error:   180:5   error  Strings must use singlequote                                                     quotes
+Error:   181:5   error  Strings must use singlequote                                                     quotes
+Error:   182:5   error  Strings must use singlequote                                                     quotes
+Error:   183:5   error  Strings must use singlequote                                                     quotes
+Error:   184:5   error  Strings must use singlequote                                                     quotes
+Error:   195:62  error  Unexpected space before function parentheses                                     space-before-function-paren
+Error:   201:44  error  Unexpected space before function parentheses                                     space-before-function-paren
+Error:   202:9   error  Expected line before comment                                                     lines-around-comment
+Error:   212:27  error  Strings must use singlequote                                                     quotes
+Error:   215:11  error  Expected line before comment                                                     lines-around-comment
+Error:   218:35  error  Strings must use singlequote                                                     quotes
+Error:   218:43  error  Strings must use singlequote                                                     quotes
+Error:   219:57  error  Strings must use singlequote                                                     quotes
+Error:   220:35  error  Strings must use singlequote                                                     quotes
+Error:   223:11  error  Expected line before comment                                                     lines-around-comment
+Error:   234:62  error  Unexpected space before function parentheses                                     space-before-function-paren
+Error:   236:5   error  Expected line before comment                                                     lines-around-comment
+Error:   238:7   error  Expected line before comment                                                     lines-around-comment
+Error:   240:40  error  Strings must use singlequote                                                     quotes
+Error:   249:64  error  Unexpected space before function parentheses                                     space-before-function-paren
+Error:   250:1   error  Expected indentation of 4 spaces but found 2                                     indent
+Error:   251:1   error  Expected indentation of 4 spaces but found 2                                     indent
+Error:   253:3   error  Expected line before comment                                                     lines-around-comment
+Error:   256:22  error  Strings must use singlequote                                                     quotes
+Error:   261:29  error  Strings must use singlequote                                                     quotes
+Error:   261:37  error  Strings must use singlequote                                                     quotes
+Error:   262:51  error  Strings must use singlequote                                                     quotes
+Error:   263:29  error  Strings must use singlequote                                                     quotes
+Error:   274:27  error  Strings must use singlequote                                                     quotes
+Error:   278:27  error  Strings must use singlequote                                                     quotes
+Error:   281:58  error  Strings must use singlequote                                                     quotes
+Error:   282:29  error  Strings must use singlequote                                                     quotes
+Error:   282:45  error  Strings must use singlequote                                                     quotes
+Error:   288:65  error  Unexpected space before function parentheses                                     space-before-function-paren
+Error:   289:1   error  Expected indentation of 4 spaces but found 2                                     indent
+Error:   290:1   error  Expected indentation of 4 spaces but found 2                                     indent
+Error:   292:3   error  Expected line before comment                                                     lines-around-comment
+Error:   294:5   error  Expected line before comment                                                     lines-around-comment
+Error:   295:31  error  Strings must use singlequote                                                     quotes
+Error:   296:7   error  Expected line before comment                                                     lines-around-comment
+Error:   297:51  error  Strings must use singlequote                                                     quotes
+Error:   304:59  error  Strings must use singlequote                                                     quotes
+Error:   309:31  error  Strings must use singlequote                                                     quotes
+Error:   310:46  error  Strings must use singlequote                                                     quotes
+Error:   315:31  error  Strings must use singlequote                                                     quotes
+Error:   315:64  error  Strings must use singlequote                                                     quotes
+Error:   316:7   error  Expected line before comment                                                     lines-around-comment
+Error:   317:48  error  Strings must use singlequote                                                     quotes
+Error:   319:9   error  Expected line before comment                                                     lines-around-comment
+Error:   320:52  error  Strings must use singlequote                                                     quotes
+Error:   320:64  error  Strings must use singlequote                                                     quotes
+Error:   321:53  error  Strings must use singlequote                                                     quotes
+Error:   321:66  error  Strings must use singlequote                                                     quotes
+Error:   323:11  error  Expected line before comment                                                     lines-around-comment
+Error:   327:7   error  Expected line before comment                                                     lines-around-comment
+Error:   333:42  error  Strings must use singlequote                                                     quotes
+Error:   336:40  error  Strings must use singlequote                                                     quotes
+Error:   339:40  error  Strings must use singlequote                                                     quotes
+Error:   346:66  error  Unexpected space before function parentheses                                     space-before-function-paren
+Error:   347:36  error  Strings must use singlequote                                                     quotes
+Error:   368:7   error  Expected line before comment                                                     lines-around-comment
+Error:   380:66  error  Strings must use singlequote                                                     quotes
+Error:   386:5   error  Expected line before comment                                                     lines-around-comment
+Error:   392:5   error  Expected line before comment                                                     lines-around-comment
+Error:   401:62  error  Unexpected space before function parentheses                                     space-before-function-paren
+Error:   402:3   error  Expected line before comment                                                     lines-around-comment
+Error:   403:33  error  Strings must use singlequote                                                     quotes
+Error:   403:38  error  Strings must use singlequote                                                     quotes
+Error:   409:29  error  Strings must use singlequote                                                     quotes
+Error:   409:41  error  Strings must use singlequote                                                     quotes
+Error:   413:60  error  Unexpected space before function parentheses                                     space-before-function-paren
+Error:   419:5   error  Expected line before comment                                                     lines-around-comment
+Error:   421:14  error  Strings must use singlequote                                                     quotes
+Error:   430:60  error  Unexpected space before function parentheses                                     space-before-function-paren
+Error:   431:3   error  Expected line before comment                                                     lines-around-comment
+Error:   433:57  error  Strings must use singlequote                                                     quotes
+Error:   434:5   error  Expected line before comment                                                     lines-around-comment
+Error:   439:5   error  Expected line before comment                                                     lines-around-comment
+Error:   446:63  error  Unexpected space before function parentheses                                     space-before-function-paren
+Error:   456:60  error  Unexpected space before function parentheses                                     space-before-function-paren
+Error:   457:9   error  'self' is assigned a value but never used. Allowed unused vars must match /^_/u  no-unused-vars
+Error:   466:32  error  Strings must use singlequote                                                     quotes
+Error:   467:62  error  Strings must use singlequote                                                     quotes
+Error:   468:40  error  Strings must use singlequote                                                     quotes
+Error:   469:30  error  Strings must use singlequote                                                     quotes
+Error:   477:36  error  Strings must use singlequote                                                     quotes
+Error:   482:31  error  Strings must use singlequote                                                     quotes
+Error:   487:62  error  Unexpected space before function parentheses                                     space-before-function-paren
+Error:   489:41  error  Strings must use singlequote                                                     quotes
+Error:   490:22  error  Strings must use singlequote                                                     quotes
+Error:   506:45  error  Strings must use singlequote                                                     quotes
+Error:   507:26  error  Strings must use singlequote                                                     quotes
+Error:   508:22  error  Strings must use singlequote                                                     quotes
+Error:   529:43  error  Strings must use singlequote                                                     quotes
+Error:   535:1   error  Expected indentation of 2 spaces but found 8                                     indent
+Error:   535:52  error  Strings must use singlequote                                                     quotes
+Error:   535:61  error  Strings must use singlequote                                                     quotes
+Error:   536:1   error  Expected indentation of 0 spaces but found 6                                     indent
+Error:   543:32  error  Strings must use singlequote                                                     quotes
+Error:   547:32  error  Strings must use singlequote                                                     quotes
+Error:   562:3   error  Strings must use singlequote                                                     quotes
+Error:   563:3   error  Strings must use singlequote                                                     quotes
+Error:   564:3   error  Strings must use singlequote                                                     quotes
+Error:   565:3   error  Strings must use singlequote                                                     quotes
+Error:   566:3   error  Strings must use singlequote                                                     quotes
+Error:   567:3   error  Strings must use singlequote                                                     quotes
+Error:   568:3   error  Strings must use singlequote                                                     quotes
+Error:   569:3   error  Strings must use singlequote                                                     quotes
+Error:   573:13  error  A space is required after '['                                                    array-bracket-spacing
+Error:   573:14  error  Strings must use singlequote                                                     quotes
+Error:   573:39  error  Strings must use singlequote                                                     quotes
+Error:   573:64  error  A space is required before ']'                                                   array-bracket-spacing
+Error:   574:26  error  A space is required after '['                                                    array-bracket-spacing
+Error:   574:27  error  Strings must use singlequote                                                     quotes
+Error:   574:56  error  A space is required before ']'                                                   array-bracket-spacing
+Error:   575:28  error  A space is required after '['                                                    array-bracket-spacing
+Error:   575:29  error  Strings must use singlequote                                                     quotes
+Error:   575:60  error  A space is required before ']'                                                   array-bracket-spacing
+
+D:\a\camunda-8.8\camunda-8.8\client\src\plugins\bpmn-color-plugin\index.js
+Error:   1:1   error  Missing license header        license-header/header
+Error:   1:25  error  Strings must use singlequote  quotes
+
+D:\a\camunda-8.8\camunda-8.8\client\src\plugins\call-activity-styling\index.js
+Error:     1:1   error  Missing license header                                                             license-header/header
+Error:    11:21  error  Strings must use singlequote                                                       quotes
+Error:    21:21  error  Strings must use singlequote                                                       quotes
+Error:    32:21  error  Strings must use singlequote                                                       quotes
+Error:    41:21  error  Strings must use singlequote                                                       quotes
+Error:    50:21  error  Strings must use singlequote                                                       quotes
+Error:    60:63  error  Unexpected space before function parentheses                                       space-before-function-paren
+Error:    61:38  error  Strings must use singlequote                                                       quotes
+Error:    66:11  error  Unexpected space before function parentheses                                       space-before-function-paren
+Error:    68:9   error  'count' is assigned a value but never used. Allowed unused vars must match /^_/u   no-unused-vars
+Error:    79:73  error  Unexpected space before function parentheses                                       space-before-function-paren
+Error:    80:1   error  Expected indentation of 4 spaces but found 2                                       indent
+Error:    87:36  error  Strings must use singlequote                                                       quotes
+Error:    89:7   error  Expected line before comment                                                       lines-around-comment
+Error:    91:30  error  Strings must use singlequote                                                       quotes
+Error:    91:38  error  Strings must use singlequote                                                       quotes
+Error:    91:49  error  Strings must use singlequote                                                       quotes
+Error:    92:30  error  Strings must use singlequote                                                       quotes
+Error:    92:46  error  Strings must use singlequote                                                       quotes
+Error:    92:53  error  Strings must use singlequote                                                       quotes
+Error:    95:30  error  Strings must use singlequote                                                       quotes
+Error:    95:40  error  Strings must use singlequote                                                       quotes
+Error:    95:51  error  Strings must use singlequote                                                       quotes
+Error:    96:30  error  Strings must use singlequote                                                       quotes
+Error:    96:46  error  Strings must use singlequote                                                       quotes
+Error:    96:53  error  Strings must use singlequote                                                       quotes
+Error:   100:41  error  Strings must use singlequote                                                       quotes
+Error:   102:35  error  Strings must use singlequote                                                       quotes
+Error:   102:43  error  Strings must use singlequote                                                       quotes
+Error:   102:54  error  Strings must use singlequote                                                       quotes
+Error:   103:35  error  Strings must use singlequote                                                       quotes
+Error:   103:51  error  Strings must use singlequote                                                       quotes
+Error:   103:58  error  Strings must use singlequote                                                       quotes
+Error:   109:45  error  Strings must use singlequote                                                       quotes
+Error:   116:11  error  Expected line before comment                                                       lines-around-comment
+Error:   118:36  error  Strings must use singlequote                                                       quotes
+Error:   122:27  error  Strings must use singlequote                                                       quotes
+Error:   123:43  error  Strings must use singlequote                                                       quotes
+Error:   124:33  error  Strings must use singlequote                                                       quotes
+Error:   124:52  error  Strings must use singlequote                                                       quotes
+Error:   125:38  error  Strings must use singlequote                                                       quotes
+Error:   130:27  error  Strings must use singlequote                                                       quotes
+Error:   131:36  error  Strings must use singlequote                                                       quotes
+Error:   135:9   error  Expected line before comment                                                       lines-around-comment
+Error:   141:7   error  Strings must use singlequote                                                       quotes
+Error:   147:34  error  Strings must use singlequote                                                       quotes
+Error:   150:9   error  Expected line before comment                                                       lines-around-comment
+Error:   155:46  error  Strings must use singlequote                                                       quotes
+Error:   162:11  error  Expected line before comment                                                       lines-around-comment
+Error:   163:27  error  Strings must use singlequote                                                       quotes
+Error:   164:13  error  Expected line before comment                                                       lines-around-comment
+Error:   167:34  error  Strings must use singlequote                                                       quotes
+Error:   172:27  error  Strings must use singlequote                                                       quotes
+Error:   172:49  error  Strings must use singlequote                                                       quotes
+Error:   172:71  error  Strings must use singlequote                                                       quotes
+Error:   174:34  error  Strings must use singlequote                                                       quotes
+Error:   179:9   error  Expected line before comment                                                       lines-around-comment
+Error:   184:45  error  Strings must use singlequote                                                       quotes
+Error:   188:15  error  'fill' is assigned a value but never used. Allowed unused vars must match /^_/u    no-unused-vars
+Error:   188:45  error  Strings must use singlequote                                                       quotes
+Error:   189:15  error  'stroke' is assigned a value but never used. Allowed unused vars must match /^_/u  no-unused-vars
+Error:   190:34  error  Strings must use singlequote                                                       quotes
+Error:   194:11  error  Expected line before comment                                                       lines-around-comment
+Error:   197:39  error  Strings must use singlequote                                                       quotes
+Error:   201:9   error  Expected line before comment                                                       lines-around-comment
+Error:   204:19  error  Empty block statement                                                              no-empty
+Error:   208:68  error  Unexpected space before function parentheses                                       space-before-function-paren
+Error:   209:38  error  Strings must use singlequote                                                       quotes
+Error:   213:37  error  A space is required after '['                                                      array-bracket-spacing
+Error:   213:38  error  Strings must use singlequote                                                       quotes
+Error:   213:50  error  Strings must use singlequote                                                       quotes
+Error:   213:60  error  Strings must use singlequote                                                       quotes
+Error:   213:77  error  A space is required before ']'                                                     array-bracket-spacing
+Error:   216:13  error  A space is required after '['                                                      array-bracket-spacing
+Error:   216:14  error  Strings must use singlequote                                                       quotes
+Error:   216:41  error  A space is required before ']'                                                     array-bracket-spacing
+Error:   217:30  error  A space is required after '['                                                      array-bracket-spacing
+Error:   217:31  error  Strings must use singlequote                                                       quotes
+Error:   217:64  error  A space is required before ']'                                                     array-bracket-spacing
+
+D:\a\camunda-8.8\camunda-8.8\client\src\plugins\connection-label-styling\index.js
+Error:     1:1    error  Missing license header                          license-header/header
+Error:     5:8    error  Strings must use singlequote                    quotes
+Error:     8:15   error  Strings must use singlequote                    quotes
+Error:     9:1    error  Trailing spaces not allowed                     no-trailing-spaces
+Error:    19:21   error  Strings must use singlequote                    quotes
+Error:    21:17   error  Strings must use singlequote                    quotes
+Error:    23:19   error  Strings must use singlequote                    quotes
+Error:    31:21   error  Strings must use singlequote                    quotes
+Error:    32:17   error  Strings must use singlequote                    quotes
+Error:    39:21   error  Strings must use singlequote                    quotes
+Error:    41:17   error  Strings must use singlequote                    quotes
+Error:    42:5    error  Expected line before comment                    lines-around-comment
+Error:    43:37   error  Strings must use singlequote                    quotes
+Error:    45:39   error  Strings must use singlequote                    quotes
+Error:    46:57   error  Strings must use singlequote                    quotes
+Error:    49:23   error  Strings must use singlequote                    quotes
+Error:    56:19   error  Strings must use singlequote                    quotes
+Error:    64:21   error  Strings must use singlequote                    quotes
+Error:    66:37   error  Strings must use singlequote                    quotes
+Error:    68:39   error  Strings must use singlequote                    quotes
+Error:    69:57   error  Strings must use singlequote                    quotes
+Error:    72:23   error  Strings must use singlequote                    quotes
+Error:    82:21   error  Strings must use singlequote                    quotes
+Error:    84:17   error  Strings must use singlequote                    quotes
+Error:    93:21   error  Strings must use singlequote                    quotes
+Error:    95:17   error  Strings must use singlequote                    quotes
+Error:   104:21   error  Strings must use singlequote                    quotes
+Error:   106:37   error  Strings must use singlequote                    quotes
+Error:   107:7    error  Expected line before comment                    lines-around-comment
+Error:   109:39   error  Strings must use singlequote                    quotes
+Error:   110:57   error  Strings must use singlequote                    quotes
+Error:   113:23   error  Strings must use singlequote                    quotes
+Error:   123:21   error  Strings must use singlequote                    quotes
+Error:   125:37   error  Strings must use singlequote                    quotes
+Error:   127:39   error  Strings must use singlequote                    quotes
+Error:   128:57   error  Strings must use singlequote                    quotes
+Error:   131:23   error  Strings must use singlequote                    quotes
+Error:   141:21   error  Strings must use singlequote                    quotes
+Error:   144:19   error  Strings must use singlequote                    quotes
+Error:   152:21   error  Strings must use singlequote                    quotes
+Error:   154:37   error  Strings must use singlequote                    quotes
+Error:   156:39   error  Strings must use singlequote                    quotes
+Error:   157:57   error  Strings must use singlequote                    quotes
+Error:   160:23   error  Strings must use singlequote                    quotes
+Error:   170:21   error  Strings must use singlequote                    quotes
+Error:   173:19   error  Strings must use singlequote                    quotes
+Error:   181:21   error  Strings must use singlequote                    quotes
+Error:   183:37   error  Strings must use singlequote                    quotes
+Error:   185:39   error  Strings must use singlequote                    quotes
+Error:   186:57   error  Strings must use singlequote                    quotes
+Error:   189:23   error  Strings must use singlequote                    quotes
+Error:   199:21   error  Strings must use singlequote                    quotes
+Error:   201:17   error  Strings must use singlequote                    quotes
+Error:   210:21   error  Strings must use singlequote                    quotes
+Error:   212:17   error  Strings must use singlequote                    quotes
+Error:   213:5    error  Expected line before comment                    lines-around-comment
+Error:   216:40   error  Strings must use singlequote                    quotes
+Error:   216:50   error  Trailing spaces not allowed                     no-trailing-spaces
+Error:   217:83   error  Strings must use singlequote                    quotes
+Error:   218:1    error  Trailing spaces not allowed                     no-trailing-spaces
+Error:   220:21   error  Strings must use singlequote                    quotes
+Error:   221:9    error  Expected line before comment                    lines-around-comment
+Error:   223:1    error  Trailing spaces not allowed                     no-trailing-spaces
+Error:   226:56   error  Strings must use singlequote                    quotes
+Error:   227:62   error  Strings must use singlequote                    quotes
+Error:   228:23   error  Strings must use singlequote                    quotes
+Error:   231:25   error  Strings must use singlequote                    quotes
+Error:   232:13   error  Expected line before comment                    lines-around-comment
+Error:   234:27   error  Strings must use singlequote                    quotes
+Error:   238:25   error  Strings must use singlequote                    quotes
+Error:   239:13   error  Expected line before comment                    lines-around-comment
+Error:   243:29   error  Strings must use singlequote                    quotes
+Error:   252:1    error  Trailing spaces not allowed                     no-trailing-spaces
+Error:   256:23   error  Strings must use singlequote                    quotes
+Error:   257:11   error  Expected line before comment                    lines-around-comment
+Error:   259:25   error  Strings must use singlequote                    quotes
+Error:   260:13   error  Expected line before comment                    lines-around-comment
+Error:   265:29   error  Strings must use singlequote                    quotes
+Error:   270:1    error  Trailing spaces not allowed                     no-trailing-spaces
+Error:   272:23   error  Strings must use singlequote                    quotes
+Error:   277:23   error  Strings must use singlequote                    quotes
+Error:   278:23   error  Strings must use singlequote                    quotes
+Error:   286:1    error  Trailing spaces not allowed                     no-trailing-spaces
+Error:   288:49   error  Strings must use singlequote                    quotes
+Error:   289:64   error  Strings must use singlequote                    quotes
+Error:   290:25   error  Strings must use singlequote                    quotes
+Error:   294:29   error  Strings must use singlequote                    quotes
+Error:   310:21   error  Strings must use singlequote                    quotes
+Error:   313:19   error  Strings must use singlequote                    quotes
+Error:   319:21   error  Strings must use singlequote                    quotes
+Error:   320:17   error  Strings must use singlequote                    quotes
+Error:   330:66   error  Unexpected space before function parentheses    space-before-function-paren
+Error:   331:54   error  Strings must use singlequote                    quotes
+Error:   333:17   error  Strings must use singlequote                    quotes
+Error:   339:77   error  Unexpected space before function parentheses    space-before-function-paren
+Error:   341:15   error  Strings must use singlequote                    quotes
+Error:   350:15   error  Strings must use singlequote                    quotes
+Error:   350:68   error  Strings must use singlequote                    quotes
+Error:   354:72   error  Unexpected space before function parentheses    space-before-function-paren
+Error:   355:1    error  Expected indentation of 4 spaces but found 2    indent
+Error:   357:15   error  Strings must use singlequote                    quotes
+Error:   358:1    error  Trailing spaces not allowed                     no-trailing-spaces
+Error:   362:19   error  Strings must use singlequote                    quotes
+Error:   365:17   error  Strings must use singlequote                    quotes
+Error:   368:39   error  Strings must use singlequote                    quotes
+Error:   369:17   error  Strings must use singlequote                    quotes
+Error:   369:71   error  Strings must use singlequote                    quotes
+Error:   369:81   error  Strings must use singlequote                    quotes
+Error:   370:1    error  Trailing spaces not allowed                     no-trailing-spaces
+Error:   373:7    error  Expected line before comment                    lines-around-comment
+Error:   376:1    error  Trailing spaces not allowed                     no-trailing-spaces
+Error:   378:21   error  Strings must use singlequote                    quotes
+Error:   380:9    error  Expected line before comment                    lines-around-comment
+Error:   382:21   error  Strings must use singlequote                    quotes
+Error:   383:1    error  Trailing spaces not allowed                     no-trailing-spaces
+Error:   384:1    error  Expected indentation of 8 spaces but found 6    indent
+Error:   385:1    error  Expected indentation of 10 spaces but found 8   indent
+Error:   385:37   error  Strings must use singlequote                    quotes
+Error:   385:47   error  Trailing spaces not allowed                     no-trailing-spaces
+Error:   386:115  error  Strings must use singlequote                    quotes
+Error:   387:1    error  Trailing spaces not allowed                     no-trailing-spaces
+Error:   388:1    error  Expected indentation of 10 spaces but found 8   indent
+Error:   389:11   error  Expected line before comment                    lines-around-comment
+Error:   390:1    error  Expected indentation of 12 spaces but found 10  indent
+Error:   391:1    error  Trailing spaces not allowed                     no-trailing-spaces
+Error:   392:1    error  Expected indentation of 12 spaces but found 10  indent
+Error:   393:1    error  Expected indentation of 12 spaces but found 10  indent
+Error:   393:48   error  Strings must use singlequote                    quotes
+Error:   394:1    error  Expected indentation of 14 spaces but found 12  indent
+Error:   394:59   error  Strings must use singlequote                    quotes
+Error:   395:1    error  Expected indentation of 14 spaces but found 12  indent
+Error:   396:1    error  Expected indentation of 16 spaces but found 14  indent
+Error:   397:1    error  Expected indentation of 16 spaces but found 14  indent
+Error:   397:27   error  Strings must use singlequote                    quotes
+Error:   397:91   error  Strings must use singlequote                    quotes
+Error:   398:1    error  Expected indentation of 14 spaces but found 12  indent
+Error:   399:1    error  Expected indentation of 12 spaces but found 10  indent
+Error:   400:1    error  Trailing spaces not allowed                     no-trailing-spaces
+Error:   401:1    error  Expected indentation of 12 spaces but found 10  indent
+Error:   402:1    error  Expected indentation of 12 spaces but found 10  indent
+Error:   403:1    error  Expected indentation of 14 spaces but found 12  indent
+Error:   404:1    error  Expected indentation of 14 spaces but found 12  indent
+Error:   405:1    error  Expected indentation of 16 spaces but found 14  indent
+Error:   406:1    error  Expected indentation of 16 spaces but found 14  indent
+Error:   406:27   error  Strings must use singlequote                    quotes
+Error:   407:1    error  Expected indentation of 14 spaces but found 12  indent
+Error:   408:1    error  Expected indentation of 12 spaces but found 10  indent
+Error:   409:1    error  Trailing spaces not allowed                     no-trailing-spaces
+Error:   410:1    error  Expected indentation of 12 spaces but found 10  indent
+Error:   411:1    error  Expected indentation of 14 spaces but found 12  indent
+Error:   412:1    error  Expected indentation of 14 spaces but found 12  indent
+Error:   412:25   error  Strings must use singlequote                    quotes
+Error:   413:1    error  Expected indentation of 12 spaces but found 10  indent
+Error:   414:1    error  Expected indentation of 10 spaces but found 8   indent
+Error:   415:1    error  Expected indentation of 8 spaces but found 6    indent
+Error:   419:21   error  Strings must use singlequote                    quotes
+Error:   422:23   error  Strings must use singlequote                    quotes
+Error:   422:144  error  Strings must use singlequote                    quotes
+Error:   423:46   error  Strings must use singlequote                    quotes
+Error:   423:86   error  Strings must use singlequote                    quotes
+Error:   424:23   error  Strings must use singlequote                    quotes
+Error:   424:96   error  Strings must use singlequote                    quotes
+Error:   424:106  error  Strings must use singlequote                    quotes
+Error:   425:1    error  Trailing spaces not allowed                     no-trailing-spaces
+Error:   428:56   error  Strings must use singlequote                    quotes
+Error:   429:25   error  Strings must use singlequote                    quotes
+Error:   429:76   error  Strings must use singlequote                    quotes
+Error:   431:96   error  Strings must use singlequote                    quotes
+Error:   435:27   error  Strings must use singlequote                    quotes
+Error:   437:1    error  Trailing spaces not allowed                     no-trailing-spaces
+Error:   440:59   error  Strings must use singlequote                    quotes
+Error:   441:27   error  Strings must use singlequote                    quotes
+Error:   441:79   error  Strings must use singlequote                    quotes
+Error:   443:57   error  Strings must use singlequote                    quotes
+Error:   454:23   error  Strings must use singlequote                    quotes
+Error:   457:21   error  Strings must use singlequote                    quotes
+Error:   460:1    error  Trailing spaces not allowed                     no-trailing-spaces
+Error:   465:21   error  Strings must use singlequote                    quotes
+Error:   466:9    error  Expected line before comment                    lines-around-comment
+Error:   471:48   error  Strings must use singlequote                    quotes
+Error:   472:23   error  Strings must use singlequote                    quotes
+Error:   474:11   error  Expected line before comment                    lines-around-comment
+Error:   475:57   error  Strings must use singlequote                    quotes
+Error:   476:23   error  Strings must use singlequote                    quotes
+Error:   476:75   error  Strings must use singlequote                    quotes
+Error:   478:55   error  Strings must use singlequote                    quotes
+Error:   481:47   error  Strings must use singlequote                    quotes
+Error:   482:27   error  Strings must use singlequote                    quotes
+Error:   487:21   error  Strings must use singlequote                    quotes
+Error:   492:19   error  Strings must use singlequote                    quotes
+Error:   493:7    error  Expected line before comment                    lines-around-comment
+Error:   494:19   error  Strings must use singlequote                    quotes
+Error:   494:112  error  Strings must use singlequote                    quotes
+Error:   495:7    error  Expected line before comment                    lines-around-comment
+Error:   496:52   error  Strings must use singlequote                    quotes
+Error:   497:19   error  Strings must use singlequote                    quotes
+Error:   497:77   error  Strings must use singlequote                    quotes
+Error:   499:90   error  Strings must use singlequote                    quotes
+Error:   501:7    error  Expected line before comment                    lines-around-comment
+Error:   502:46   error  Strings must use singlequote                    quotes
+Error:   503:19   error  Strings must use singlequote                    quotes
+Error:   503:71   error  Strings must use singlequote                    quotes
+Error:   505:47   error  Strings must use singlequote                    quotes
+Error:   506:48   error  Strings must use singlequote                    quotes
+Error:   508:47   error  Strings must use singlequote                    quotes
+Error:   509:51   error  Strings must use singlequote                    quotes
+Error:   517:1    error  Trailing spaces not allowed                     no-trailing-spaces
+Error:   518:17   error  Strings must use singlequote                    quotes
+Error:   522:1    error  Trailing spaces not allowed                     no-trailing-spaces
+Error:   530:1    error  Trailing spaces not allowed                     no-trailing-spaces
+Error:   541:19   error  Strings must use singlequote                    quotes
+Error:   542:7    error  Expected line before comment                    lines-around-comment
+Error:   544:7    error  Expected line before comment                    lines-around-comment
+Error:   545:31   error  Strings must use singlequote                    quotes
+Error:   545:47   error  Strings must use singlequote                    quotes
+Error:   553:19   error  Strings must use singlequote                    quotes
+Error:   555:19   error  Strings must use singlequote                    quotes
+Error:   555:78   error  Strings must use singlequote                    quotes
+Error:   556:7    error  Expected line before comment                    lines-around-comment
+Error:   564:50   error  Strings must use singlequote                    quotes
+Error:   565:17   error  Strings must use singlequote                    quotes
+Error:   567:19   error  Strings must use singlequote                    quotes
+Error:   573:7    error  Strings must use singlequote                    quotes
+Error:   574:7    error  Strings must use singlequote                    quotes
+Error:   576:25   error  Strings must use singlequote                    quotes
+Error:   576:34   error  Strings must use singlequote                    quotes
+Error:   577:25   error  Strings must use singlequote                    quotes
+Error:   581:25   error  Strings must use singlequote                    quotes
+Error:   582:25   error  Strings must use singlequote                    quotes
+Error:   583:25   error  Strings must use singlequote                    quotes
+Error:   584:25   error  Strings must use singlequote                    quotes
+Error:   585:25   error  Strings must use singlequote                    quotes
+Error:   585:33   error  Strings must use singlequote                    quotes
+Error:   586:25   error  Strings must use singlequote                    quotes
+Error:   586:41   error  Strings must use singlequote                    quotes
+Error:   587:25   error  Strings must use singlequote                    quotes
+Error:   587:35   error  Strings must use singlequote                    quotes
+Error:   588:25   error  Strings must use singlequote                    quotes
+Error:   588:31   error  Strings must use singlequote                    quotes
+Error:   589:25   error  Strings must use singlequote                    quotes
+Error:   589:31   error  Strings must use singlequote                    quotes
+Error:   594:19   error  Strings must use singlequote                    quotes
+Error:   597:19   error  Strings must use singlequote                    quotes
+Error:   605:13   error  Expected line before comment                    lines-around-comment
+Error:   606:33   error  Strings must use singlequote                    quotes
+Error:   606:49   error  Strings must use singlequote                    quotes
+Error:   609:11   error  Expected line before comment                    lines-around-comment
+Error:   621:26   error  A space is required after '['                   array-bracket-spacing
+Error:   621:57   error  A space is required before ']'                  array-bracket-spacing
+Error:   631:28   error  A space is required after '['                   array-bracket-spacing
+Error:   631:49   error  A space is required before ']'                  array-bracket-spacing
+Error:   643:28   error  A space is required after '['                   array-bracket-spacing
+Error:   643:49   error  A space is required before ']'                  array-bracket-spacing
+Error:   651:19   error  Strings must use singlequote                    quotes
+Error:   654:19   error  Strings must use singlequote                    quotes
+Error:   659:72   error  Unexpected space before function parentheses    space-before-function-paren
+Error:   660:1    error  Expected indentation of 4 spaces but found 2    indent
+Error:   661:1    error  Expected indentation of 4 spaces but found 2    indent
+Error:   669:25   error  Strings must use singlequote                    quotes
+Error:   670:25   error  Strings must use singlequote                    quotes
+Error:   671:25   error  Strings must use singlequote                    quotes
+Error:   672:25   error  Strings must use singlequote                    quotes
+Error:   674:5    error  Expected line before comment                    lines-around-comment
+Error:   679:64   error  Unexpected space before function parentheses    space-before-function-paren
+Error:   724:40   error  A space is required after '['                   array-bracket-spacing
+Error:   724:41   error  Strings must use singlequote                    quotes
+Error:   724:53   error  Strings must use singlequote                    quotes
+Error:   724:63   error  Strings must use singlequote                    quotes
+Error:   724:80   error  A space is required before ']'                  array-bracket-spacing
+Error:   727:13   error  A space is required after '['                   array-bracket-spacing
+Error:   727:14   error  Strings must use singlequote                    quotes
+Error:   727:44   error  A space is required before ']'                  array-bracket-spacing
+Error:   728:33   error  A space is required after '['                   array-bracket-spacing
+Error:   728:34   error  Strings must use singlequote                    quotes
+Error:   728:70   error  A space is required before ']'                  array-bracket-spacing
+
+D:\a\camunda-8.8\camunda-8.8\client\src\plugins\jump-effect-plugin\JumpConnectionRenderer.js
+Error:      1:1   error  Missing license header                                                                 license-header/header
+Error:      1:26  error  Strings must use singlequote                                                           quotes
+Error:      2:22  error  Strings must use singlequote                                                           quotes
+Error:      3:56  error  Strings must use singlequote                                                           quotes
+Error:      6:1   error  Expected indentation of 4 spaces but found 2                                           indent
+Error:      7:1   error  Expected indentation of 4 spaces but found 2                                           indent
+Error:      8:1   error  Expected indentation of 4 spaces but found 2                                           indent
+Error:      9:1   error  Expected indentation of 4 spaces but found 2                                           indent
+Error:     10:1   error  Expected indentation of 4 spaces but found 2                                           indent
+Error:     11:1   error  Expected indentation of 4 spaces but found 2                                           indent
+Error:     12:1   error  Expected indentation of 4 spaces but found 2                                           indent
+Error:     13:1   error  Expected indentation of 4 spaces but found 2                                           indent
+Error:     14:1   error  Expected indentation of 4 spaces but found 2                                           indent
+Error:     50:53  error  Strings must use singlequote                                                           quotes
+Error:     58:17  error  Strings must use singlequote                                                           quotes
+Error:     59:5   error  Expected line before comment                                                           lines-around-comment
+Error:     77:63  error  Unexpected space before function parentheses                                           space-before-function-paren
+Error:     81:15  error  Strings must use singlequote                                                           quotes
+Error:     89:15  error  Strings must use singlequote                                                           quotes
+Error:     91:51  error  Strings must use singlequote                                                           quotes
+Error:     92:7   error  Expected line before comment                                                           lines-around-comment
+Error:     98:15  error  Strings must use singlequote                                                           quotes
+Error:    101:7   error  Expected line before comment                                                           lines-around-comment
+Error:    107:15  error  Strings must use singlequote                                                           quotes
+Error:    109:37  error  Strings must use singlequote                                                           quotes
+Error:    110:7   error  Expected line before comment                                                           lines-around-comment
+Error:    116:15  error  Strings must use singlequote                                                           quotes
+Error:    118:37  error  Strings must use singlequote                                                           quotes
+Error:    119:7   error  Expected line before comment                                                           lines-around-comment
+Error:    126:15  error  Strings must use singlequote                                                           quotes
+Error:    128:37  error  Strings must use singlequote                                                           quotes
+Error:    129:7   error  Expected line before comment                                                           lines-around-comment
+Error:    137:15  error  Strings must use singlequote                                                           quotes
+Error:    141:15  error  Strings must use singlequote                                                           quotes
+Error:    145:15  error  Strings must use singlequote                                                           quotes
+Error:    150:5   error  Strings must use singlequote                                                           quotes
+Error:    157:15  error  Strings must use singlequote                                                           quotes
+Error:    158:5   error  Expected line before comment                                                           lines-around-comment
+Error:    164:67  error  Unexpected space before function parentheses                                           space-before-function-paren
+Error:    165:1   error  Expected indentation of 4 spaces but found 2                                           indent
+Error:    167:3   error  Expected line before comment                                                           lines-around-comment
+Error:    177:5   error  Expected line before comment                                                           lines-around-comment
+Error:    191:65  error  Unexpected space before function parentheses                                           space-before-function-paren
+Error:    192:1   error  Expected indentation of 4 spaces but found 2                                           indent
+Error:    199:24  error  Strings must use singlequote                                                           quotes
+Error:    225:7   error  Expected line before comment                                                           lines-around-comment
+Error:    226:36  error  Strings must use singlequote                                                           quotes
+Error:    232:74  error  Unexpected space before function parentheses                                           space-before-function-paren
+Error:    233:1   error  Expected indentation of 4 spaces but found 2                                           indent
+Error:    240:24  error  Strings must use singlequote                                                           quotes
+Error:    257:7   error  Expected line before comment                                                           lines-around-comment
+Error:    259:36  error  Strings must use singlequote                                                           quotes
+Error:    265:60  error  Unexpected space before function parentheses                                           space-before-function-paren
+Error:    266:1   error  Expected indentation of 4 spaces but found 2                                           indent
+Error:    267:1   error  Expected indentation of 4 spaces but found 2                                           indent
+Error:    269:3   error  Expected line before comment                                                           lines-around-comment
+Error:    309:63  error  Unexpected space before function parentheses                                           space-before-function-paren
+Error:    312:3   error  Expected line before comment                                                           lines-around-comment
+Error:    316:65  error  Unexpected space before function parentheses                                           space-before-function-paren
+Error:    319:3   error  Expected line before comment                                                           lines-around-comment
+Error:    323:67  error  Unexpected space before function parentheses                                           space-before-function-paren
+Error:    330:7   error  Expected line before comment                                                           lines-around-comment
+Error:    331:36  error  Strings must use singlequote                                                           quotes
+Error:    339:36  error  Strings must use singlequote                                                           quotes
+Error:    345:70  error  Unexpected space before function parentheses                                           space-before-function-paren
+Error:    351:42  error  Strings must use singlequote                                                           quotes
+Error:    358:68  error  Unexpected space before function parentheses                                           space-before-function-paren
+Error:    359:1   error  Expected indentation of 4 spaces but found 2                                           indent
+Error:    366:5   error  Expected line before comment                                                           lines-around-comment
+Error:    382:11  error  Unexpected space before function parentheses                                           space-before-function-paren
+Error:    388:26  error  Strings must use singlequote                                                           quotes
+Error:    410:71  error  Unexpected space before function parentheses                                           space-before-function-paren
+Error:    411:1   error  Expected indentation of 4 spaces but found 2                                           indent
+Error:    418:24  error  Strings must use singlequote                                                           quotes
+Error:    436:62  error  Unexpected space before function parentheses                                           space-before-function-paren
+Error:    437:3   error  Expected line before comment                                                           lines-around-comment
+Error:    457:65  error  Unexpected space before function parentheses                                           space-before-function-paren
+Error:    473:61  error  Unexpected space before function parentheses                                           space-before-function-paren
+Error:    498:74  error  Unexpected space before function parentheses                                           space-before-function-paren
+Error:    499:1   error  Expected indentation of 4 spaces but found 2                                           indent
+Error:    502:55  error  Strings must use singlequote                                                           quotes
+Error:    520:69  error  Unexpected space before function parentheses                                           space-before-function-paren
+Error:    521:1   error  Expected indentation of 4 spaces but found 2                                           indent
+Error:    522:1   error  Expected indentation of 4 spaces but found 2                                           indent
+Error:    523:1   error  Expected indentation of 4 spaces but found 2                                           indent
+Error:    565:17  error  'targetType' is assigned a value but never used. Allowed unused vars must match /^_/u  no-unused-vars
+Error:    566:15  error  Strings must use singlequote                                                           quotes
+Error:    567:15  error  Strings must use singlequote                                                           quotes
+Error:    568:11  error  Expected line before comment                                                           lines-around-comment
+Error:    598:3   error  Expected line before comment                                                           lines-around-comment
+Error:    604:62  error  Unexpected space before function parentheses                                           space-before-function-paren
+Error:    605:1   error  Expected indentation of 4 spaces but found 2                                           indent
+Error:    606:1   error  Expected indentation of 4 spaces but found 2                                           indent
+Error:    608:36  error  Strings must use singlequote                                                           quotes
+Error:    634:7   error  Expected line before comment                                                           lines-around-comment
+Error:    672:20  error  Strings must use singlequote                                                           quotes
+Error:    678:70  error  Unexpected space before function parentheses                                           space-before-function-paren
+Error:    679:1   error  Expected indentation of 4 spaces but found 2                                           indent
+Error:    680:1   error  Expected indentation of 4 spaces but found 2                                           indent
+Error:    681:1   error  Expected indentation of 4 spaces but found 2                                           indent
+Error:    683:3   error  Expected line before comment                                                           lines-around-comment
+Error:    686:5   error  Expected line before comment                                                           lines-around-comment
+Error:    701:5   error  Expected line before comment                                                           lines-around-comment
+Error:    713:5   error  Strings must use singlequote                                                           quotes
+Error:    714:5   error  Strings must use singlequote                                                           quotes
+Error:    716:28  error  Strings must use singlequote                                                           quotes
+Error:    720:34  error  A space is required after '['                                                          array-bracket-spacing
+Error:    720:45  error  A space is required before ']'                                                         array-bracket-spacing
+Error:    733:65  error  Unexpected space before function parentheses                                           space-before-function-paren
+Error:    734:1   error  Expected indentation of 4 spaces but found 2                                           indent
+Error:    735:1   error  Expected indentation of 4 spaces but found 2                                           indent
+Error:    736:1   error  Expected indentation of 4 spaces but found 2                                           indent
+Error:    738:3   error  Expected line before comment                                                           lines-around-comment
+Error:    747:5   error  Strings must use singlequote                                                           quotes
+Error:    748:5   error  Strings must use singlequote                                                           quotes
+Error:    750:28  error  Strings must use singlequote                                                           quotes
+Error:    753:34  error  A space is required after '['                                                          array-bracket-spacing
+Error:    753:45  error  A space is required before ']'                                                         array-bracket-spacing
+Error:    763:58  error  Unexpected space before function parentheses                                           space-before-function-paren
+Error:    764:1   error  Expected indentation of 4 spaces but found 2                                           indent
+Error:    765:1   error  Expected indentation of 4 spaces but found 2                                           indent
+Error:    766:1   error  Expected indentation of 4 spaces but found 2                                           indent
+Error:    810:5   error  Strings must use singlequote                                                           quotes
+Error:    811:5   error  Strings must use singlequote                                                           quotes
+Error:    813:29  error  Strings must use singlequote                                                           quotes
+Error:    814:29  error  Strings must use singlequote                                                           quotes
+Error:    814:53  error  Strings must use singlequote                                                           quotes
+Error:    815:29  error  Strings must use singlequote                                                           quotes
+Error:    815:55  error  Strings must use singlequote                                                           quotes
+Error:    816:29  error  Strings must use singlequote                                                           quotes
+Error:    816:45  error  Strings must use singlequote                                                           quotes
+Error:    822:61  error  Unexpected space before function parentheses                                           space-before-function-paren
+Error:    823:36  error  Strings must use singlequote                                                           quotes
+Error:    833:68  error  Unexpected space before function parentheses                                           space-before-function-paren
+Error:    835:55  error  Strings must use singlequote                                                           quotes
+Error:    849:70  error  Unexpected space before function parentheses                                           space-before-function-paren
+Error:    850:1   error  Expected indentation of 4 spaces but found 2                                           indent
+Error:    851:1   error  Expected indentation of 4 spaces but found 2                                           indent
+Error:    867:65  error  Unexpected space before function parentheses                                           space-before-function-paren
+Error:    870:1   error  Expected indentation of 6 spaces but found 4                                           indent
+Error:    871:1   error  Expected indentation of 6 spaces but found 4                                           indent
+Error:    872:1   error  Expected indentation of 6 spaces but found 4                                           indent
+Error:    885:74  error  Unexpected space before function parentheses                                           space-before-function-paren
+Error:    886:1   error  Expected indentation of 4 spaces but found 2                                           indent
+Error:    887:1   error  Expected indentation of 4 spaces but found 2                                           indent
+Error:    888:1   error  Expected indentation of 4 spaces but found 2                                           indent
+Error:    907:7   error  Expected line before comment                                                           lines-around-comment
+Error:    933:17  error  'targetType' is assigned a value but never used. Allowed unused vars must match /^_/u  no-unused-vars
+Error:    934:15  error  Strings must use singlequote                                                           quotes
+Error:    935:15  error  Strings must use singlequote                                                           quotes
+Error:    936:11  error  Expected line before comment                                                           lines-around-comment
+Error:    969:60  error  Unexpected space before function parentheses                                           space-before-function-paren
+Error:    970:1   error  Expected indentation of 4 spaces but found 2                                           indent
+Error:    971:1   error  Expected indentation of 4 spaces but found 2                                           indent
+Error:    973:3   error  Expected line before comment                                                           lines-around-comment
+Error:    977:11  error  'targetType' is assigned a value but never used. Allowed unused vars must match /^_/u  no-unused-vars
+Error:    978:9   error  Strings must use singlequote                                                           quotes
+Error:    979:9   error  Strings must use singlequote                                                           quotes
+Error:    980:5   error  Expected line before comment                                                           lines-around-comment
+Error:    989:62  error  Unexpected space before function parentheses                                           space-before-function-paren
+Error:    990:3   error  Expected line before comment                                                           lines-around-comment
+Error:    993:24  error  Strings must use singlequote                                                           quotes
+Error:   1010:71  error  Unexpected space before function parentheses                                           space-before-function-paren
+Error:   1011:1   error  Expected indentation of 4 spaces but found 2                                           indent
+Error:   1012:1   error  Expected indentation of 4 spaces but found 2                                           indent
+Error:   1013:1   error  Expected indentation of 4 spaces but found 2                                           indent
+Error:   1014:1   error  Expected indentation of 4 spaces but found 2                                           indent
+Error:   1015:1   error  Expected indentation of 4 spaces but found 2                                           indent
+Error:   1017:3   error  Expected line before comment                                                           lines-around-comment
+Error:   1050:66  error  Unexpected space before function parentheses                                           space-before-function-paren
+Error:   1051:1   error  Expected indentation of 4 spaces but found 2                                           indent
+Error:   1052:1   error  Expected indentation of 4 spaces but found 2                                           indent
+Error:   1053:1   error  Expected indentation of 4 spaces but found 2                                           indent
+Error:   1054:1   error  Expected indentation of 4 spaces but found 2                                           indent
+Error:   1072:62  error  Unexpected space before function parentheses                                           space-before-function-paren
+Error:   1079:65  error  Unexpected space before function parentheses                                           space-before-function-paren
+Error:   1080:1   error  Expected indentation of 4 spaces but found 2                                           indent
+Error:   1081:1   error  Expected indentation of 4 spaces but found 2                                           indent
+Error:   1082:1   error  Expected indentation of 4 spaces but found 2                                           indent
+Error:   1083:1   error  Expected indentation of 4 spaces but found 2                                           indent
+Error:   1107:72  error  Unexpected space before function parentheses                                           space-before-function-paren
+Error:   1108:1   error  Expected indentation of 4 spaces but found 2                                           indent
+Error:   1109:1   error  Expected indentation of 4 spaces but found 2                                           indent
+Error:   1110:1   error  Expected indentation of 4 spaces but found 2                                           indent
+Error:   1111:1   error  Expected indentation of 4 spaces but found 2                                           indent
+Error:   1112:1   error  Expected indentation of 4 spaces but found 2                                           indent
+Error:   1114:3   error  Expected line before comment                                                           lines-around-comment
+Error:   1148:69  error  Unexpected space before function parentheses                                           space-before-function-paren
+Error:   1149:1   error  Expected indentation of 4 spaces but found 2                                           indent
+Error:   1150:1   error  Expected indentation of 4 spaces but found 2                                           indent
+Error:   1151:1   error  Expected indentation of 4 spaces but found 2                                           indent
+Error:   1165:68  error  Unexpected space before function parentheses                                           space-before-function-paren
+Error:   1166:1   error  Expected indentation of 4 spaces but found 2                                           indent
+Error:   1167:1   error  Expected indentation of 4 spaces but found 2                                           indent
+Error:   1169:36  error  Strings must use singlequote                                                           quotes
+Error:   1191:7   error  Expected line before comment                                                           lines-around-comment
+Error:   1218:20  error  Strings must use singlequote                                                           quotes
+Error:   1222:62  error  Unexpected space before function parentheses                                           space-before-function-paren
+Error:   1223:1   error  Expected indentation of 4 spaces but found 2                                           indent
+Error:   1224:1   error  Expected indentation of 4 spaces but found 2                                           indent
+Error:   1225:1   error  Expected indentation of 4 spaces but found 2                                           indent
+Error:   1237:21  error  A space is required after '['                                                          array-bracket-spacing
+Error:   1237:43  error  A space is required before ']'                                                         array-bracket-spacing
+Error:   1278:66  error  Unexpected space before function parentheses                                           space-before-function-paren
+Error:   1279:1   error  Expected indentation of 4 spaces but found 2                                           indent
+Error:   1280:1   error  Expected indentation of 4 spaces but found 2                                           indent
+Error:   1281:1   error  Expected indentation of 4 spaces but found 2                                           indent
+Error:   1336:66  error  Unexpected space before function parentheses                                           space-before-function-paren
+Error:   1337:40  error  A space is required after '['                                                          array-bracket-spacing
+Error:   1337:41  error  Strings must use singlequote                                                           quotes
+Error:   1337:50  error  A space is required before ']'                                                         array-bracket-spacing
+Error:   1339:13  error  Strings must use singlequote                                                           quotes
+Error:   1340:11  error  Strings must use singlequote                                                           quotes
+Error:   1341:20  error  Strings must use singlequote                                                           quotes
+Error:   1342:21  error  Strings must use singlequote                                                           quotes
+Error:   1349:3   error  Strings must use singlequote                                                           quotes
+Error:   1350:3   error  Strings must use singlequote                                                           quotes
+Error:   1351:3   error  Strings must use singlequote                                                           quotes
+Error:   1352:3   error  Strings must use singlequote                                                           quotes
+Error:   1353:3   error  Strings must use singlequote                                                           quotes
+Error:   1354:3   error  Strings must use singlequote                                                           quotes
+Error:   1355:3   error  Strings must use singlequote                                                           quotes
+Error:   1356:3   error  Strings must use singlequote                                                           quotes
+Error:   1360:13  error  A space is required after '['                                                          array-bracket-spacing
+Error:   1360:14  error  Strings must use singlequote                                                           quotes
+Error:   1360:38  error  A space is required before ']'                                                         array-bracket-spacing
+Error:   1361:27  error  A space is required after '['                                                          array-bracket-spacing
+Error:   1361:28  error  Strings must use singlequote                                                           quotes
+Error:   1361:58  error  A space is required before ']'                                                         array-bracket-spacing
+
+D:\a\camunda-8.8\camunda-8.8\client\src\plugins\pool-lane-styling\index.js
+Error:     1:1   error  Missing license header                        license-header/header
+Error:     5:8   error  Strings must use singlequote                  quotes
+Error:    19:3   error  Unreachable code                              no-unreachable
+Error:    19:21  error  Strings must use singlequote                  quotes
+Error:    22:7   error  Expected line before comment                  lines-around-comment
+Error:    31:3   error  Unreachable code                              no-unreachable
+Error:    31:21  error  Strings must use singlequote                  quotes
+Error:    42:3   error  Unreachable code                              no-unreachable
+Error:    42:21  error  Strings must use singlequote                  quotes
+Error:    53:3   error  Unreachable code                              no-unreachable
+Error:    53:21  error  Strings must use singlequote                  quotes
+Error:    62:3   error  Unreachable code                              no-unreachable
+Error:    62:21  error  Strings must use singlequote                  quotes
+Error:    71:3   error  Unreachable code                              no-unreachable
+Error:    71:21  error  Strings must use singlequote                  quotes
+Error:    81:57  error  Unexpected space before function parentheses  space-before-function-paren
+Error:    84:23  error  Strings must use singlequote                  quotes
+Error:    84:62  error  Strings must use singlequote                  quotes
+Error:    89:51  error  Unexpected space before function parentheses  space-before-function-paren
+Error:    90:38  error  Strings must use singlequote                  quotes
+Error:    94:51  error  Unexpected space before function parentheses  space-before-function-paren
+Error:    95:38  error  Strings must use singlequote                  quotes
+Error:    99:70  error  Unexpected space before function parentheses  space-before-function-paren
+Error:   110:65  error  Unexpected space before function parentheses  space-before-function-paren
+Error:   111:3   error  Expected line before comment                  lines-around-comment
+Error:   136:5   error  Expected line before comment                  lines-around-comment
+Error:   144:61  error  Unexpected space before function parentheses  space-before-function-paren
+Error:   145:3   error  Expected line before comment                  lines-around-comment
+Error:   146:38  error  Strings must use singlequote                  quotes
+Error:   147:38  error  Strings must use singlequote                  quotes
+Error:   148:38  error  Strings must use singlequote                  quotes
+Error:   152:23  error  Strings must use singlequote                  quotes
+Error:   152:33  error  Strings must use singlequote                  quotes
+Error:   153:23  error  Strings must use singlequote                  quotes
+Error:   153:39  error  Strings must use singlequote                  quotes
+Error:   157:23  error  Strings must use singlequote                  quotes
+Error:   157:33  error  Strings must use singlequote                  quotes
+Error:   158:23  error  Strings must use singlequote                  quotes
+Error:   158:39  error  Strings must use singlequote                  quotes
+Error:   162:23  error  Strings must use singlequote                  quotes
+Error:   162:33  error  Strings must use singlequote                  quotes
+Error:   163:23  error  Strings must use singlequote                  quotes
+Error:   163:39  error  Strings must use singlequote                  quotes
+Error:   168:61  error  Unexpected space before function parentheses  space-before-function-paren
+Error:   169:3   error  Expected line before comment                  lines-around-comment
+Error:   170:38  error  Strings must use singlequote                  quotes
+Error:   171:38  error  Strings must use singlequote                  quotes
+Error:   172:38  error  Strings must use singlequote                  quotes
+Error:   176:23  error  Strings must use singlequote                  quotes
+Error:   176:33  error  Strings must use singlequote                  quotes
+Error:   177:23  error  Strings must use singlequote                  quotes
+Error:   177:39  error  Strings must use singlequote                  quotes
+Error:   181:23  error  Strings must use singlequote                  quotes
+Error:   181:33  error  Strings must use singlequote                  quotes
+Error:   182:23  error  Strings must use singlequote                  quotes
+Error:   182:39  error  Strings must use singlequote                  quotes
+Error:   186:23  error  Strings must use singlequote                  quotes
+Error:   186:33  error  Strings must use singlequote                  quotes
+Error:   187:23  error  Strings must use singlequote                  quotes
+Error:   187:39  error  Strings must use singlequote                  quotes
+Error:   191:33  error  A space is required after '['                 array-bracket-spacing
+Error:   191:34  error  Strings must use singlequote                  quotes
+Error:   191:46  error  Strings must use singlequote                  quotes
+Error:   191:56  error  Strings must use singlequote                  quotes
+Error:   191:73  error  A space is required before ']'                array-bracket-spacing
+Error:   194:13  error  A space is required after '['                 array-bracket-spacing
+Error:   194:14  error  Strings must use singlequote                  quotes
+Error:   194:37  error  A space is required before ']'                array-bracket-spacing
+Error:   195:26  error  A space is required after '['                 array-bracket-spacing
+Error:   195:27  error  Strings must use singlequote                  quotes
+Error:   195:56  error  A space is required before ']'                array-bracket-spacing
+Error:   206:1   error  Trailing spaces not allowed                   no-trailing-spaces
+Error:   213:5   error  Expected line before comment                  lines-around-comment
+Error:   214:30  error  Strings must use singlequote                  quotes
+Error:   214:70  error  Strings must use singlequote                  quotes
+Error:   221:51  error  Strings must use singlequote                  quotes
+Error:   224:43  error  Strings must use singlequote                  quotes
+Error:   231:48  error  Strings must use singlequote                  quotes
+Error:   269:58  error  Strings must use singlequote                  quotes
+Error:   274:9   error  Expected line before comment                  lines-around-comment
+Error:   275:57  error  Strings must use singlequote                  quotes
+Error:   278:36  error  Strings must use singlequote                  quotes
+Error:   278:61  error  Strings must use singlequote                  quotes
+Error:   278:86  error  Strings must use singlequote                  quotes
+Error:   288:63  error  Strings must use singlequote                  quotes
+Error:   296:9   error  Expected line before comment                  lines-around-comment
+Error:   297:52  error  Strings must use singlequote                  quotes
+Error:   297:64  error  Strings must use singlequote                  quotes
+Error:   299:1   error  Trailing spaces not allowed                   no-trailing-spaces
+Error:   301:30  error  Strings must use singlequote                  quotes
+Error:   301:40  error  Strings must use singlequote                  quotes
+Error:   302:30  error  Strings must use singlequote                  quotes
+Error:   302:46  error  Strings must use singlequote                  quotes
+Error:   303:1   error  Trailing spaces not allowed                   no-trailing-spaces
+Error:   306:11  error  Expected line before comment                  lines-around-comment
+Error:   308:48  error  Strings must use singlequote                  quotes
+Error:   309:54  error  Strings must use singlequote                  quotes
+Error:   311:31  error  Strings must use singlequote                  quotes
+Error:   311:37  error  Strings must use singlequote                  quotes
+Error:   312:32  error  Strings must use singlequote                  quotes
+Error:   314:32  error  Strings must use singlequote                  quotes
+Error:   314:41  error  Strings must use singlequote                  quotes
+Error:   316:1   error  Trailing spaces not allowed                   no-trailing-spaces
+Error:   328:5   error  Expected line before comment                  lines-around-comment
+
+D:\a\camunda-8.8\camunda-8.8\client\src\plugins\resizable-tasks-plugin\ResizableTasksModule.js
+Error:     1:1   error  Missing license header                        license-header/header
+Error:     6:8   error  Strings must use singlequote                  quotes
+Error:    15:15  error  Strings must use singlequote                  quotes
+Error:    20:15  error  A space is required after '['                 array-bracket-spacing
+Error:    20:16  error  Strings must use singlequote                  quotes
+Error:    20:36  error  Strings must use singlequote                  quotes
+Error:    20:53  error  A space is required before ']'                array-bracket-spacing
+Error:    26:65  error  Unexpected space before function parentheses  space-before-function-paren
+Error:    40:57  error  Unexpected space before function parentheses  space-before-function-paren
+Error:    42:5   error  Strings must use singlequote                  quotes
+Error:    43:5   error  Strings must use singlequote                  quotes
+Error:    44:5   error  Strings must use singlequote                  quotes
+Error:    45:5   error  Strings must use singlequote                  quotes
+Error:    46:5   error  Strings must use singlequote                  quotes
+Error:    47:5   error  Strings must use singlequote                  quotes
+Error:    48:5   error  Strings must use singlequote                  quotes
+Error:    49:5   error  Strings must use singlequote                  quotes
+Error:    50:5   error  Strings must use singlequote                  quotes
+Error:    51:5   error  Strings must use singlequote                  quotes
+Error:    58:60  error  Unexpected space before function parentheses  space-before-function-paren
+Error:    60:33  error  Strings must use singlequote                  quotes
+Error:    68:5   error  Strings must use singlequote                  quotes
+Error:    69:5   error  Strings must use singlequote                  quotes
+Error:    71:30  error  Strings must use singlequote                  quotes
+Error:    72:32  error  Strings must use singlequote                  quotes
+Error:    76:5   error  Expected line before comment                  lines-around-comment
+Error:    77:51  error  Strings must use singlequote                  quotes
+Error:    77:70  error  Strings must use singlequote                  quotes
+Error:    81:15  error  Strings must use singlequote                  quotes
+Error:    82:13  error  Strings must use singlequote                  quotes
+Error:    87:15  error  Strings must use singlequote                  quotes
+Error:    88:13  error  Strings must use singlequote                  quotes
+Error:    93:15  error  Strings must use singlequote                  quotes
+Error:    94:13  error  Strings must use singlequote                  quotes
+Error:   101:15  error  Strings must use singlequote                  quotes
+Error:   102:13  error  Strings must use singlequote                  quotes
+Error:   107:15  error  Strings must use singlequote                  quotes
+Error:   108:13  error  Strings must use singlequote                  quotes
+Error:   113:15  error  Strings must use singlequote                  quotes
+Error:   114:13  error  Strings must use singlequote                  quotes
+Error:   119:15  error  Strings must use singlequote                  quotes
+Error:   120:13  error  Strings must use singlequote                  quotes
+Error:   131:7   error  Strings must use singlequote                  quotes
+Error:   151:36  error  Strings must use singlequote                  quotes
+Error:   158:36  error  Strings must use singlequote                  quotes
+Error:   163:5   error  Strings must use singlequote                  quotes
+Error:   172:5   error  Strings must use singlequote                  quotes
+Error:   182:62  error  Unexpected space before function parentheses  space-before-function-paren
+Error:   183:43  error  Strings must use singlequote                  quotes
+Error:   183:73  error  Strings must use singlequote                  quotes
+Error:   191:11  error  Strings must use singlequote                  quotes
+Error:   192:13  error  Strings must use singlequote                  quotes
+Error:   193:5   error  Strings must use singlequote                  quotes
+Error:   193:21  error  Strings must use singlequote                  quotes
+Error:   194:9   error  Strings must use singlequote                  quotes
+Error:   197:39  error  A space is required after '['                 array-bracket-spacing
+Error:   197:50  error  A space is required before ']'                array-bracket-spacing
+Error:   202:24  error  Strings must use singlequote                  quotes
+Error:   208:5   error  Strings must use singlequote                  quotes
+Error:   212:29  error  Strings must use singlequote                  quotes
+Error:   219:5   error  Strings must use singlequote                  quotes
+Error:   223:29  error  Strings must use singlequote                  quotes
+Error:   233:55  error  Unexpected space before function parentheses  space-before-function-paren
+Error:   234:1   error  Expected indentation of 4 spaces but found 2  indent
+Error:   235:1   error  Expected indentation of 4 spaces but found 2  indent
+Error:   236:1   error  Expected indentation of 4 spaces but found 2  indent
+Error:   265:34  error  Strings must use singlequote                  quotes
+Error:   266:34  error  Strings must use singlequote                  quotes
+Error:   272:29  error  Strings must use singlequote                  quotes
+Error:   273:29  error  Strings must use singlequote                  quotes
+Error:   277:62  error  Unexpected space before function parentheses  space-before-function-paren
+Error:   278:1   error  Expected indentation of 4 spaces but found 2  indent
+Error:   279:1   error  Expected indentation of 4 spaces but found 2  indent
+Error:   280:1   error  Expected indentation of 4 spaces but found 2  indent
+Error:   281:1   error  Expected indentation of 4 spaces but found 2  indent
+Error:   286:1   error  Expected indentation of 2 spaces but found 4  indent
+Error:   286:10  error  Strings must use singlequote                  quotes
+Error:   287:1   error  Expected indentation of 4 spaces but found 6  indent
+Error:   288:1   error  Expected indentation of 4 spaces but found 6  indent
+Error:   289:1   error  Expected indentation of 4 spaces but found 6  indent
+Error:   291:1   error  Expected indentation of 2 spaces but found 4  indent
+Error:   291:10  error  Strings must use singlequote                  quotes
+Error:   292:1   error  Expected indentation of 4 spaces but found 6  indent
+Error:   293:1   error  Expected indentation of 4 spaces but found 6  indent
+Error:   294:1   error  Expected indentation of 4 spaces but found 6  indent
+Error:   295:1   error  Expected indentation of 4 spaces but found 6  indent
+Error:   297:1   error  Expected indentation of 2 spaces but found 4  indent
+Error:   297:10  error  Strings must use singlequote                  quotes
+Error:   298:1   error  Expected indentation of 4 spaces but found 6  indent
+Error:   299:1   error  Expected indentation of 4 spaces but found 6  indent
+Error:   300:1   error  Expected indentation of 4 spaces but found 6  indent
+Error:   301:1   error  Expected indentation of 4 spaces but found 6  indent
+Error:   303:1   error  Expected indentation of 2 spaces but found 4  indent
+Error:   303:10  error  Strings must use singlequote                  quotes
+Error:   304:1   error  Expected indentation of 4 spaces but found 6  indent
+Error:   305:1   error  Expected indentation of 4 spaces but found 6  indent
+Error:   306:1   error  Expected indentation of 4 spaces but found 6  indent
+Error:   307:1   error  Expected indentation of 4 spaces but found 6  indent
+Error:   308:1   error  Expected indentation of 4 spaces but found 6  indent
+Error:   310:1   error  Expected indentation of 2 spaces but found 4  indent
+Error:   310:10  error  Strings must use singlequote                  quotes
+Error:   311:1   error  Expected indentation of 4 spaces but found 6  indent
+Error:   312:1   error  Expected indentation of 4 spaces but found 6  indent
+Error:   313:1   error  Expected indentation of 4 spaces but found 6  indent
+Error:   315:1   error  Expected indentation of 2 spaces but found 4  indent
+Error:   315:10  error  Strings must use singlequote                  quotes
+Error:   316:1   error  Expected indentation of 4 spaces but found 6  indent
+Error:   317:1   error  Expected indentation of 4 spaces but found 6  indent
+Error:   319:1   error  Expected indentation of 2 spaces but found 4  indent
+Error:   319:10  error  Strings must use singlequote                  quotes
+Error:   320:1   error  Expected indentation of 4 spaces but found 6  indent
+Error:   321:1   error  Expected indentation of 4 spaces but found 6  indent
+Error:   323:1   error  Expected indentation of 2 spaces but found 4  indent
+Error:   323:10  error  Strings must use singlequote                  quotes
+Error:   324:1   error  Expected indentation of 4 spaces but found 6  indent
+Error:   325:1   error  Expected indentation of 4 spaces but found 6  indent
+Error:   326:1   error  Expected indentation of 4 spaces but found 6  indent
+Error:   333:58  error  Unexpected space before function parentheses  space-before-function-paren
+Error:   338:40  error  Strings must use singlequote                  quotes
+Error:   348:3   error  Strings must use singlequote                  quotes
+Error:   349:3   error  Strings must use singlequote                  quotes
+Error:   350:3   error  Strings must use singlequote                  quotes
+Error:   351:3   error  Strings must use singlequote                  quotes
+Error:   355:13  error  A space is required after '['                 array-bracket-spacing
+Error:   355:14  error  Strings must use singlequote                  quotes
+Error:   355:36  error  A space is required before ']'                array-bracket-spacing
+Error:   356:25  error  A space is required after '['                 array-bracket-spacing
+Error:   356:26  error  Strings must use singlequote                  quotes
+Error:   356:54  error  A space is required before ']'                array-bracket-spacing
+
+D:\a\camunda-8.8\camunda-8.8\client\src\plugins\resizable-tasks-plugin\index.js
+Error:   1:1   error  Missing license header        license-header/header
+Error:   1:25  error  Strings must use singlequote  quotes
+
+D:\a\camunda-8.8\camunda-8.8\client\src\plugins\update-checks\UpdateChecks.js
+Error:   19:8   error  'UpdateChecksAPI' is defined but never used. Allowed unused vars must match /^_/u                     no-unused-vars
+Error:   21:17  error  'DISABLE_REMOTE_INTERACTION' is defined but never used. Allowed unused vars must match /^_/u          no-unused-vars
+Error:   21:66  error  'UPDATE_SERVER_URL' is defined but never used. Allowed unused vars must match /^_/u                   no-unused-vars
+Error:   38:7   error  'DEFAULT_UPDATE_SERVER_URL' is assigned a value but never used. Allowed unused vars must match /^_/u  no-unused-vars
+Error:   53:5   error  Expected line before comment                                                                          lines-around-comment
+Error:   67:5   error  Unreachable code                                                                                      no-unreachable
+
+D:\a\camunda-8.8\camunda-8.8\tasks\generate-icon.js
+Error:   17:5   error  Expected line before comment    lines-around-comment
+Error:   20:1   error  Trailing spaces not allowed     no-trailing-spaces
+Error:   22:1   error  Trailing spaces not allowed     no-trailing-spaces
+Error:   24:19  error  A space is required after '['   array-bracket-spacing
+Error:   24:48  error  A space is required before ']'  array-bracket-spacing
+Error:   26:24  error  Trailing spaces not allowed     no-trailing-spaces
+Error:   33:1   error  Trailing spaces not allowed     no-trailing-spaces
+Error:   36:1   error  Trailing spaces not allowed     no-trailing-spaces
+Error:   39:1   error  Trailing spaces not allowed     no-trailing-spaces
+
+D:\a\camunda-8.8\camunda-8.8\tasks\test-distro.js
+Error:   48:7  error  'archs' is assigned a value but never used. Allowed unused vars must match /^_/u  no-unused-vars
+
+✖ 1137 problems (1137 errors, 0 warnings)
+  1115 errors and 0 warnings potentially fixable with the `--fix` option.
+
+ERROR: "lint" exited with 1.
+Error: Process completed with exit code 1.

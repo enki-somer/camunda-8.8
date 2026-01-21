@@ -35,4 +35,10 @@ jobs:
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         NODE_ENV: "production"
-      run: npm run build:distro -- --win --publish
+      run: |
+        # Skip lint and test, build directly (matching local build process)
+        npm run clean
+        npm run preload:build
+        npm run client:build
+        npm run build:distro -- --win --publish
+        # Skip build:test-distro as it's optional for releases

@@ -457,20 +457,23 @@ renderer.on('app:restart', function() {
 });
 
 // Auto-update IPC handlers
+
 // Use ipcMain directly for rendererReady to access event.sender and send status immediately
 ipcMain.on('updater:rendererReady', function(event, id, args) {
   try {
     const state = AutoUpdate.getLastUpdaterState();
+
     // Send to the specific window that requested it
     if (event.sender && !event.sender.isDestroyed()) {
       event.sender.send('updater:status', state);
+
       // Send response (renderer expects this for the promise)
-      event.sender.send('updater:rendererReady:response:' + id, [null]);
+      event.sender.send('updater:rendererReady:response:' + id, [ null ]);
     }
   } catch (error) {
     log.error('Error handling updater:rendererReady:', error);
     if (event.sender && !event.sender.isDestroyed()) {
-      event.sender.send('updater:rendererReady:response:' + id, [null]);
+      event.sender.send('updater:rendererReady:response:' + id, [ null ]);
     }
   }
 });
@@ -708,6 +711,7 @@ app.on('ready', function() {
     AutoUpdate.initAutoUpdate();
   } catch (error) {
     log.error('Failed to initialize auto-update:', error);
+
     // Continue normally - app must not crash
   }
 });

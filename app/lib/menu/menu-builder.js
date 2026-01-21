@@ -646,11 +646,13 @@ class MenuBuilder {
       {
         label: 'Check for Updates',
         click: () => {
+
           // Trigger manual update check
           try {
             const AutoUpdate = require('../autoUpdate');
             AutoUpdate.checkForUpdatesSafe();
           } catch (error) {
+
             // Silent fail - don't disrupt user
             const log = require('../log')('app:menu');
             log.error('Error checking for updates:', error);
