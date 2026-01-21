@@ -12,24 +12,6 @@ Run npm run all -- --x64 --no-compress
 > eslint .
 
 
-D:\a\camunda-8.8\camunda-8.8\app\lib\autoUpdate.js
-Error:   130:5  error  Expected line before comment  lines-around-comment
-Error:   149:5  error  Expected line before comment  lines-around-comment
-Error:   185:5  error  Expected line before comment  lines-around-comment
-
-D:\a\camunda-8.8\camunda-8.8\app\lib\index.js
-Error:   464:5   error  Expected line before comment    lines-around-comment
-Error:   467:7   error  Expected line before comment    lines-around-comment
-Error:   468:65  error  A space is required after '['   array-bracket-spacing
-Error:   468:70  error  A space is required before ']'  array-bracket-spacing
-Error:   473:65  error  A space is required after '['   array-bracket-spacing
-Error:   473:70  error  A space is required before ']'  array-bracket-spacing
-Error:   711:5   error  Expected line before comment    lines-around-comment
-
-D:\a\camunda-8.8\camunda-8.8\app\lib\menu\menu-builder.js
-Error:   649:11  error  Expected line before comment  lines-around-comment
-Error:   654:13  error  Expected line before comment  lines-around-comment
-
 D:\a\camunda-8.8\camunda-8.8\client\src\app\tabs\bpmn\modeler\BpmnModeler.js
 Error:   11:25  error  Strings must use singlequote    quotes
 Error:   13:31  error  Strings must use singlequote    quotes
@@ -97,11 +79,6 @@ Error:   56:25  error  A space is required after '['                 array-brack
 Error:   56:26  error  Strings must use singlequote                  quotes
 Error:   56:39  error  A space is required before ']'                array-bracket-spacing
 Error:   90:1   error  Expected indentation of 2 spaces but found 1  indent
-
-D:\a\camunda-8.8\camunda-8.8\client\src\plugins\auto-update\AutoUpdate.js
-Error:   15:13  error  'require' is not defined      no-undef
-Error:   83:7   error  Expected line before comment  lines-around-comment
-Error:   89:7   error  Expected line before comment  lines-around-comment
 
 D:\a\camunda-8.8\camunda-8.8\client\src\plugins\bpmn-color-plugin\ColorContextPadProvider.js
 Error:    1:1   error  Missing license header                        license-header/header
@@ -1182,11 +1159,8 @@ Error:   33:1   error  Trailing spaces not allowed     no-trailing-spaces
 Error:   36:1   error  Trailing spaces not allowed     no-trailing-spaces
 Error:   39:1   error  Trailing spaces not allowed     no-trailing-spaces
 
-D:\a\camunda-8.8\camunda-8.8\tasks\test-distro.js
-Error:   48:7  error  'archs' is assigned a value but never used. Allowed unused vars must match /^_/u  no-unused-vars
-
-✖ 1137 problems (1137 errors, 0 warnings)
-  1115 errors and 0 warnings potentially fixable with the `--fix` option.
+✖ 1121 problems (1121 errors, 0 warnings)
+  1101 errors and 0 warnings potentially fixable with the `--fix` option.
 
 ERROR: "lint" exited with 1.
 Error: Process completed with exit code 1.

@@ -1,5 +1,5 @@
 name: CI
-on: [ push, pull_request ]
+on: [push, pull_request]
 
 defaults:
   run:
@@ -10,43 +10,55 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ ubuntu-latest, macos-latest, windows-2022 ]
+        os: [ubuntu-latest, macos-latest, windows-2022]
     runs-on: ${{ matrix.os }}
 
     steps:
-    - name: Checkout
-      uses: actions/checkout@v6
-    - name: Use Node.js
-      uses: actions/setup-node@v6
-      with:
-        node-version: 24
-        cache: 'npm'
-    - name: Install dependencies
-      run: npm ci
-    - name: Project setup
-      uses: bpmn-io/actions/setup@latest
-    - name: Build with code coverage
-      if: ${{ runner.OS == 'Linux' }}
-      run: COVERAGE=1 npm run all -- --x64 --no-compress
-    - name: Build
-      if: ${{ runner.OS != 'Linux' }}
-      run: npm run all -- --x64 --no-compress
-    - name: Import Secrets
-      if: ${{ runner.OS == 'Linux' }}
-      id: secrets
-      uses: hashicorp/vault-action@v3.0.0
-      with:
-        url: ${{ secrets.VAULT_ADDR }}
-        method: approle
-        roleId: ${{ secrets.VAULT_ROLE_ID }}
-        secretId: ${{ secrets.VAULT_SECRET_ID }}
-        exportEnv: false
-        secrets: |
-          secret/data/products/desktop-modeler/ci/CODECOV_TOKEN CODECOV_TOKEN;
-    - name: Upload coverage
-      if: ${{ runner.OS == 'Linux' }}
-      uses: codecov/codecov-action@v5
-      with:
-        fail_ci_if_error: true
-      env:
-        CODECOV_TOKEN: ${{ steps.secrets.outputs.CODECOV_TOKEN }}
+      - name: Checkout
+        uses: actions/checkout@v6
+      - name: Use Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          cache: "npm"
+      - name: Install dependencies
+        run: npm ci
+      - name: Project setup
+        uses: bpmn-io/actions/setup@latest
+      - name: Build with code coverage
+        if: ${{ runner.OS == 'Linux' }}
+        run: |
+          npm run clean
+          npm run preload:build
+          npm run client:build
+          COVERAGE=1 npm run test
+          npm run build:distro -- --x64 --no-compress
+          npm run build:test-distro -- --x64
+      - name: Build
+        if: ${{ runner.OS != 'Linux' }}
+        run: |
+          npm run clean
+          npm run preload:build
+          npm run client:build
+          npm run test
+          npm run build:distro -- --x64 --no-compress
+          npm run build:test-distro -- --x64
+      - name: Import Secrets
+        if: ${{ runner.OS == 'Linux' }}
+        id: secrets
+        uses: hashicorp/vault-action@v3.0.0
+        with:
+          url: ${{ secrets.VAULT_ADDR }}
+          method: approle
+          roleId: ${{ secrets.VAULT_ROLE_ID }}
+          secretId: ${{ secrets.VAULT_SECRET_ID }}
+          exportEnv: false
+          secrets: |
+            secret/data/products/desktop-modeler/ci/CODECOV_TOKEN CODECOV_TOKEN;
+      - name: Upload coverage
+        if: ${{ runner.OS == 'Linux' }}
+        uses: codecov/codecov-action@v5
+        with:
+          fail_ci_if_error: true
+        env:
+          CODECOV_TOKEN: ${{ steps.secrets.outputs.CODECOV_TOKEN }}
