@@ -1,6 +1,6 @@
 {
   "name": "camunda-modeler",
-  "version": "5.43.1",
+  "version": "5.43.2",
   "description": "Modeling solution for BPMN, DMN, and Forms based on bpmn.io.",
   "private": true,
   "main": "prod.js",
@@ -17,6 +17,7 @@
     "bpmn-moddle": "^9.0.1",
     "chokidar": "^5.0.0",
     "dmn-moddle": "^11.0.0",
+    "electron-updater": "^6.7.3",
     "epipebomb": "^1.0.0",
     "fast-glob": "^3.3.1",
     "ids": "^1.0.0",

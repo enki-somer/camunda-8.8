@@ -249,6 +249,47 @@ This enhanced version builds upon Camunda Modeler 5.43.1 with additional visual 
 
 This version is maintained at: https://github.com/enki-somer/camunda-8.8.git
 
+## 📦 Publishing Updates
+
+This version includes automatic update functionality via GitHub Releases. Updates are checked automatically on startup and every 12 hours.
+
+### For Maintainers: Publishing a New Release
+
+1. **Bump version** in `app/package.json` (use semantic versioning, e.g., `5.43.2`)
+2. **Commit** the version change:
+   ```sh
+   git add app/package.json
+   git commit -m "Bump version to X.Y.Z"
+   ```
+3. **Create and push a git tag**:
+   ```sh
+   git tag vX.Y.Z
+   git push origin main
+   git push --tags
+   ```
+4. **GitHub Actions automatically**:
+   - Builds Windows NSIS installer (x64)
+   - Generates `latest.yml` and blockmap files
+   - Publishes all artifacts to GitHub Releases
+   - Uses the tag name as the release name
+
+**Important**: Only non-prerelease GitHub Releases will be offered as updates (prereleases are automatically skipped).
+
+### For Users: How Updates Work
+
+- **Automatic checks**: The app checks for updates on startup (after 5 seconds) and then every 12 hours
+- **Update available**: If a new version is found, a modal will appear with "Download & Install" and "Later" options
+- **Download progress**: During download, a progress bar shows the download status
+- **Install**: Once downloaded, a "Restart Now" prompt appears. Clicking it will restart the app and install the update
+- **Manual check**: You can manually check for updates via Help → Check for Updates
+- **No internet**: The app works normally without internet. Update checks fail silently (no errors shown)
+
+**Safety**: All update operations are non-blocking. The app will never crash or be disrupted if:
+- The update server is unreachable
+- Network errors occur
+- Update metadata is invalid
+- Download fails
+
 ---
 
 **Note**: This is an enhanced version of the Camunda Modeler with additional plugins and features. For the official Camunda Modeler, visit [camunda/camunda-modeler](https://github.com/camunda/camunda-modeler).

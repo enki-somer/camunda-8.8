@@ -1,6 +1,6 @@
 {
-  "appId": "com.camunda.CamundaModeler",
-  "productName": "Camunda Modeler",
+  "appId": "com.enkisomer.camunda-modeler-custom",
+  "productName": "BE-Camunda Modeler",
   "files": [
     {
       "filter": [
@@ -16,17 +16,27 @@
   "win": {
     "target": [
       {
-        "target": "zip",
-        "arch": [ "x64", "ia32" ]
+        "target": "nsis",
+        "arch": [
+          "x64"
+        ]
       }
     ]
+  },
+  "publish": {
+    "provider": "github",
+    "owner": "enki-somer",
+    "repo": "camunda-8.8",
+    "releaseType": "release"
   },
   "linux": {
     "category": "Development",
     "target": [
       {
         "target": "tar.gz",
-        "arch": [ "x64" ]
+        "arch": [
+          "x64"
+        ]
       }
     ]
   },
@@ -36,11 +46,17 @@
     "target": [
       {
         "target": "dmg",
-        "arch": [ "x64", "arm64" ]
+        "arch": [
+          "x64",
+          "arm64"
+        ]
       },
       {
         "target": "zip",
-        "arch": [ "x64", "arm64" ]
+        "arch": [
+          "x64",
+          "arm64"
+        ]
       }
     ]
   },

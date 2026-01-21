@@ -60,15 +60,22 @@ const platforms = [
 const expectedFiles = {
   win: [
     {
-      name: 'camunda-modeler-${version}-win-${arch}.zip',
-      archs,
-      contents: [
-        'Camunda Modeler.exe',
-        'support/register_fileassoc.bat',
-        'LICENSE.camunda-modeler.txt',
-        'THIRD_PARTY_NOTICES.camunda-modeler.txt',
-        'VERSION'
-      ]
+      name: 'camunda-modeler-${version}-win-setup.exe',
+      archs: [ 'x64' ],
+      contents: null, // NSIS installer, can't easily verify contents
+      optional: false
+    },
+    {
+      name: 'camunda-modeler-${version}-win-setup.exe.blockmap',
+      archs: [ 'x64' ],
+      contents: null, // Blockmap file for electron-updater
+      optional: false
+    },
+    {
+      name: 'latest.yml',
+      archs: [ 'x64' ],
+      contents: null, // Update metadata for electron-updater (only when publishing)
+      optional: true
     }
   ],
   linux: [
@@ -230,15 +237,20 @@ async function verifyArchives(platforms, version) {
 
       const {
         name,
-        contents
+        contents,
+        optional = false
       } = distributable;
 
       const archivePath = `${distroDir}/${replaceVersion(name)}`;
 
       console.log(` - ${name}`);
 
-      // (0): verify name exists
+      // (0): verify name exists (skip if optional and doesn't exist)
       if (!fs.existsSync(archivePath)) {
+        if (optional) {
+          console.log('     > optional file not found (skipping)');
+          continue;
+        }
         throw new Error(`expected <${name}> to exist`);
       }
 

@@ -13,7 +13,8 @@ const {
   dialog: electronDialog,
   screen: electronScreen,
   session,
-  BrowserWindow
+  BrowserWindow,
+  ipcMain
 } = require('electron');
 
 const Sentry = require('@sentry/node');
@@ -36,6 +37,7 @@ const Plugins = require('./plugins');
 const WindowManager = require('./window-manager');
 const Workspace = require('./workspace');
 const ZeebeAPI = require('./zeebe-api');
+const AutoUpdate = require('./autoUpdate');
 const { getTemplatesPath } = require('./template-updater/util');
 const { TemplateUpdater, OOTB_CONNECTORS_ENDPOINT } = require('./template-updater/template-updater');
 
@@ -454,6 +456,55 @@ renderer.on('app:restart', function() {
   app.exit(0);
 });
 
+// Auto-update IPC handlers
+// Use ipcMain directly for rendererReady to access event.sender and send status immediately
+ipcMain.on('updater:rendererReady', function(event, id, args) {
+  try {
+    const state = AutoUpdate.getLastUpdaterState();
+    // Send to the specific window that requested it
+    if (event.sender && !event.sender.isDestroyed()) {
+      event.sender.send('updater:status', state);
+      // Send response (renderer expects this for the promise)
+      event.sender.send('updater:rendererReady:response:' + id, [null]);
+    }
+  } catch (error) {
+    log.error('Error handling updater:rendererReady:', error);
+    if (event.sender && !event.sender.isDestroyed()) {
+      event.sender.send('updater:rendererReady:response:' + id, [null]);
+    }
+  }
+});
+
+renderer.on('updater:check', function(done) {
+  try {
+    AutoUpdate.checkForUpdatesSafe();
+    if (done) done(null);
+  } catch (error) {
+    log.error('Error handling updater:check:', error);
+    if (done) done(null);
+  }
+});
+
+renderer.on('updater:download', function(done) {
+  try {
+    AutoUpdate.downloadUpdateSafe();
+    if (done) done(null);
+  } catch (error) {
+    log.error('Error handling updater:download:', error);
+    if (done) done(null);
+  }
+});
+
+renderer.on('updater:install', function(done) {
+  try {
+    AutoUpdate.quitAndInstallSafe();
+    if (done) done(null);
+  } catch (error) {
+    log.error('Error handling updater:install:', error);
+    if (done) done(null);
+  }
+});
+
 app.on('web-contents-created', (event, webContents) => {
 
   // open new window externally
@@ -651,6 +702,23 @@ app.on('ready', function() {
   });
 
   app.createEditorWindow();
+
+  // Initialize auto-update (wrapped in try/catch for safety)
+  try {
+    AutoUpdate.initAutoUpdate();
+  } catch (error) {
+    log.error('Failed to initialize auto-update:', error);
+    // Continue normally - app must not crash
+  }
+});
+
+// Cleanup on app quit
+app.on('before-quit', function() {
+  try {
+    AutoUpdate.cleanup();
+  } catch (error) {
+    log.error('Error cleaning up auto-update:', error);
+  }
 });
 
 

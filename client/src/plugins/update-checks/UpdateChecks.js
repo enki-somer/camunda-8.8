@@ -50,6 +50,11 @@ export default class UpdateChecks extends PureComponent {
 
   constructor(props) {
     super(props);
+    // Disable Camunda update checks - using electron-updater instead
+    return new NoopComponent();
+
+    // Original code below (disabled)
+    /*
     if (Flags.get(DISABLE_REMOTE_INTERACTION)) {
       return new NoopComponent();
     }
@@ -57,6 +62,7 @@ export default class UpdateChecks extends PureComponent {
     const updateServerUrl = Flags.get(UPDATE_SERVER_URL, DEFAULT_UPDATE_SERVER_URL);
 
     this.updateChecksAPI = new UpdateChecksAPI(updateServerUrl);
+    */
 
     this.updateAvailableButtonRef = React.createRef(null);
 

@@ -87,7 +87,7 @@ CloudBpmnModeler.prototype._modules = [
   modelingTracking,
   popupMenuTracking,
   paletteTracking,
-  bpmnColorPlugin,
+ bpmnColorPlugin,
   jumpConnectionRendererModule,
   poolLaneStylingModule,
   callActivityStylingModule,

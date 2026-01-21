@@ -63,7 +63,11 @@ const allowedEvents = [
   'zeebe:searchProcessInstances',
   'zeebe:searchElementInstances',
   'zeebe:searchVariables',
-  'zeebe:searchIncidents'
+  'zeebe:searchIncidents',
+  'updater:rendererReady',
+  'updater:check',
+  'updater:download',
+  'updater:install'
 ];
 
 let executed = false;

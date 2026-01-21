@@ -641,11 +641,22 @@ class MenuBuilder {
           label: 'Privacy Preferences',
           click: () => app.emit('menu:action', 'emit-event', { type: 'show-privacy-preferences' })
         },
-        {
-          label: 'Check for Updates',
-          click: () => app.emit('menu:action', 'emit-event', { type: 'updateChecks.execute' })
-        },
       ] : [],
+      getSeparatorTemplate(),
+      {
+        label: 'Check for Updates',
+        click: () => {
+          // Trigger manual update check
+          try {
+            const AutoUpdate = require('../autoUpdate');
+            AutoUpdate.checkForUpdatesSafe();
+          } catch (error) {
+            // Silent fail - don't disrupt user
+            const log = require('../log')('app:menu');
+            log.error('Error checking for updates:', error);
+          }
+        }
+      },
       getSeparatorTemplate()
     ];
 
