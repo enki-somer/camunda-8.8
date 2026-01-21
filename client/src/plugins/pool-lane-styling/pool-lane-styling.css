@@ -1,0 +1,62 @@
+/* Pool Lane Styling - Blue borders as default */
+
+/* Primary selectors for pool and lane elements */
+.djs-container .djs-element[data-element-id*="Participant"] rect,
+.djs-container .djs-element[data-element-id*="Participant"] path,
+.djs-container .djs-element[data-element-id*="Participant"] line,
+.djs-container .djs-element[data-element-id*="Lane"] rect,
+.djs-container .djs-element[data-element-id*="Lane"] path,
+.djs-container .djs-element[data-element-id*="Lane"] line,
+.djs-container g[data-element-id*="Participant"] rect,
+.djs-container g[data-element-id*="Participant"] path,
+.djs-container g[data-element-id*="Participant"] line,
+.djs-container g[data-element-id*="Lane"] rect,
+.djs-container g[data-element-id*="Lane"] path,
+.djs-container g[data-element-id*="Lane"] line {
+  stroke: #1976D2;
+  stroke-width: 3px;
+}
+
+/* Alternative selectors for different BPMN renderers */
+.djs-container .djs-shape[data-element-type="bpmn:Participant"] rect,
+.djs-container .djs-shape[data-element-type="bpmn:Participant"] path,
+.djs-container .djs-shape[data-element-type="bpmn:Participant"] line,
+.djs-container .djs-shape[data-element-type="bpmn:Lane"] rect,
+.djs-container .djs-shape[data-element-type="bpmn:Lane"] path,
+.djs-container .djs-shape[data-element-type="bpmn:Lane"] line {
+  stroke: #1976D2;
+  stroke-width: 3px;
+}
+
+/* Class-based targeting */
+.djs-container .participant rect,
+.djs-container .participant path,
+.djs-container .participant line,
+.djs-container .lane rect,
+.djs-container .lane path,
+.djs-container .lane line {
+  stroke: #1976D2;
+  stroke-width: 3px;
+}
+
+/* Additional selectors for external plugin compatibility */
+.djs-container svg .djs-element[data-element-id*="Participant"] rect,
+.djs-container svg .djs-element[data-element-id*="Participant"] path,
+.djs-container svg .djs-element[data-element-id*="Participant"] line,
+.djs-container svg .djs-element[data-element-id*="Lane"] rect,
+.djs-container svg .djs-element[data-element-id*="Lane"] path,
+.djs-container svg .djs-element[data-element-id*="Lane"] line {
+  stroke: #1976D2 !important;
+  stroke-width: 3px !important;
+}
+
+/* Ultra-high specificity for token simulation plugin compatibility */
+.djs-container .djs-overlay-context .djs-element[data-element-id*="Participant"] rect,
+.djs-container .djs-overlay-context .djs-element[data-element-id*="Participant"] path,
+.djs-container .djs-overlay-context .djs-element[data-element-id*="Participant"] line,
+.djs-container .djs-overlay-context .djs-element[data-element-id*="Lane"] rect,
+.djs-container .djs-overlay-context .djs-element[data-element-id*="Lane"] path,
+.djs-container .djs-overlay-context .djs-element[data-element-id*="Lane"] line {
+  stroke: #1976D2 !important;
+  stroke-width: 3px !important;
+}

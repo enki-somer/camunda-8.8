@@ -8,35 +8,37 @@
  * except in compliance with the MIT License.
  */
 
-import BpmnModeler from 'camunda-bpmn-js/lib/camunda-cloud/Modeler';
+import BpmnModeler from "camunda-bpmn-js/lib/camunda-cloud/Modeler";
 
-import addExporterModule from '@bpmn-io/add-exporter';
+import addExporterModule from "@bpmn-io/add-exporter";
 
-import completeDirectEditingModule from '../../bpmn/modeler/features/complete-direct-editing';
-import globalClipboardModule from './features/global-clipboard';
-import handToolOnSpaceModule from '../../bpmn/modeler/features/hand-tool-on-space';
-import propertiesPanelKeyboardBindingsModule from '../../bpmn/modeler/features/properties-panel-keyboard-bindings';
-import lintingAnnotationsModule from '@camunda/linting/modeler';
+import completeDirectEditingModule from "../../bpmn/modeler/features/complete-direct-editing";
+import globalClipboardModule from "./features/global-clipboard";
+import handToolOnSpaceModule from "../../bpmn/modeler/features/hand-tool-on-space";
+import propertiesPanelKeyboardBindingsModule from "../../bpmn/modeler/features/properties-panel-keyboard-bindings";
+import lintingAnnotationsModule from "@camunda/linting/modeler";
 
-import { BpmnJSTracking as bpmnJSTracking } from 'bpmn-js-tracking';
+import { BpmnJSTracking as bpmnJSTracking } from "bpmn-js-tracking";
 
-import contextPadTracking from 'bpmn-js-tracking/lib/features/context-pad';
-import elementTemplates from 'bpmn-js-tracking/lib/features/element-templates';
-import feelPopupTracking from 'bpmn-js-tracking/lib/features/feel-popup';
-import modelingTracking from 'bpmn-js-tracking/lib/features/modeling';
-import popupMenuTracking from 'bpmn-js-tracking/lib/features/popup-menu';
-import paletteTracking from 'bpmn-js-tracking/lib/features/palette';
+import contextPadTracking from "bpmn-js-tracking/lib/features/context-pad";
+import elementTemplates from "bpmn-js-tracking/lib/features/element-templates";
+import feelPopupTracking from "bpmn-js-tracking/lib/features/feel-popup";
+import modelingTracking from "bpmn-js-tracking/lib/features/modeling";
+import popupMenuTracking from "bpmn-js-tracking/lib/features/popup-menu";
+import paletteTracking from "bpmn-js-tracking/lib/features/palette";
+import bpmnColorPlugin from "../../../../plugins/bpmn-color-plugin/ColorManagementPlugin";
+import jumpConnectionRendererModule from "../../../../plugins/jump-effect-plugin/JumpConnectionRenderer";
+import poolLaneStylingModule from "../../../../plugins/pool-lane-styling";
+import callActivityStylingModule from "../../../../plugins/call-activity-styling";
+import connectionLabelStylingModule from "../../../../plugins/connection-label-styling";
+import ResizableTasksModule from "../../../../plugins/resizable-tasks-plugin/ResizableTasksModule";
 
-import { BpmnImprovedCanvasModule } from '../../bpmn/modeler/features/improved-canvas';
+import { BpmnImprovedCanvasModule } from "../../bpmn/modeler/features/improved-canvas";
 
-import Flags, {
-  DISABLE_ADJUST_ORIGIN,
-} from '../../../../util/Flags';
+import Flags, { DISABLE_ADJUST_ORIGIN } from "../../../../util/Flags";
 
 export default class CloudBpmnModeler extends BpmnModeler {
-
   constructor(options = {}) {
-
     let {
       additionalModules = [],
       moddleExtensions = {},
@@ -44,15 +46,15 @@ export default class CloudBpmnModeler extends BpmnModeler {
       ...otherOptions
     } = options;
 
-    if (settings.get('app.newContextPad')) {
+    if (settings.get("app.newContextPad")) {
       additionalModules = [
         ...additionalModules,
         {
-          __depends__: [ BpmnImprovedCanvasModule ],
-          resourceLinkingContextPadProvider: [ 'value', null ],
-          resourceLinkingRules: [ 'value', null ],
-          showComments: [ 'value', null ]
-        }
+          __depends__: [BpmnImprovedCanvasModule],
+          resourceLinkingContextPadProvider: ["value", null],
+          resourceLinkingRules: ["value", null],
+          showComments: ["value", null],
+        },
       ];
     }
 
@@ -62,8 +64,8 @@ export default class CloudBpmnModeler extends BpmnModeler {
       moddleExtensions,
       disableAdjustOrigin: Flags.get(DISABLE_ADJUST_ORIGIN),
       canvas: {
-        autoFocus: true
-      }
+        autoFocus: true,
+      },
     });
   }
 }
@@ -84,5 +86,11 @@ CloudBpmnModeler.prototype._modules = [
   feelPopupTracking,
   modelingTracking,
   popupMenuTracking,
-  paletteTracking
+  paletteTracking,
+  bpmnColorPlugin,
+  jumpConnectionRendererModule,
+  poolLaneStylingModule,
+  callActivityStylingModule,
+  connectionLabelStylingModule,
+  ResizableTasksModule,
 ];

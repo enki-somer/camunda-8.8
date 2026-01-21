@@ -64,6 +64,8 @@ import {
 
 import { getCloudTemplates } from '../../../util/elementTemplates';
 
+import { applyPoolLaneStylingToSVG } from '../../../plugins/pool-lane-styling';
+
 const EXPORT_AS = [ 'png', 'jpeg', 'svg' ];
 
 export const DEFAULT_ENGINE_PROFILE = {
@@ -662,9 +664,23 @@ export class BpmnEditor extends CachedComponent {
     const modeler = this.getModeler();
 
     try {
+      console.log('[CloudBpmnEditor.exportSVG] START');
       const { svg } = await modeler.saveSVG();
+      console.log('[CloudBpmnEditor.exportSVG] SVG length BEFORE styling:', svg ? svg.length : 0);
 
-      return svg;
+      // Get pool/lane IDs from elementRegistry
+      const elementRegistry = modeler.get('elementRegistry');
+      const ids = elementRegistry.getAll()
+        .filter(e => e.type === 'bpmn:Participant' || e.type === 'bpmn:Lane')
+        .map(e => e.id);
+      console.log('[CloudBpmnEditor.exportSVG] Pool/lane IDs found:', ids.length, ids);
+
+      // Apply pool/lane styling to exported SVG
+      const styledSvg = applyPoolLaneStylingToSVG(svg, ids);
+      console.log('[CloudBpmnEditor.exportSVG] SVG length AFTER styling:', styledSvg ? styledSvg.length : 0);
+      console.log('[CloudBpmnEditor.exportSVG] Contains #1976D2:', styledSvg && styledSvg.includes('#1976D2'));
+
+      return styledSvg;
     } catch (err) {
 
       return Promise.reject(err);

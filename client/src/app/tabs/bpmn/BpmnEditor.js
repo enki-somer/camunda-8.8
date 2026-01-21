@@ -66,6 +66,8 @@ import {
 
 import { getPlatformTemplates } from '../../../util/elementTemplates';
 
+import { applyPoolLaneStylingToSVG } from '../../../plugins/pool-lane-styling';
+
 const NAMESPACE_URL_ACTIVITI = 'http://activiti.org/bpmn';
 
 const NAMESPACE_CAMUNDA = {
@@ -660,9 +662,23 @@ export class BpmnEditor extends CachedComponent {
     const modeler = this.getModeler();
 
     try {
+      console.log('[BpmnEditor.exportSVG] START');
       const { svg } = await modeler.saveSVG();
+      console.log('[BpmnEditor.exportSVG] SVG length BEFORE styling:', svg ? svg.length : 0);
 
-      return svg;
+      // Get pool/lane IDs from elementRegistry
+      const elementRegistry = modeler.get('elementRegistry');
+      const ids = elementRegistry.getAll()
+        .filter(e => e.type === 'bpmn:Participant' || e.type === 'bpmn:Lane')
+        .map(e => e.id);
+      console.log('[BpmnEditor.exportSVG] Pool/lane IDs found:', ids.length, ids);
+
+      // Apply pool/lane styling to exported SVG
+      const styledSvg = applyPoolLaneStylingToSVG(svg, ids);
+      console.log('[BpmnEditor.exportSVG] SVG length AFTER styling:', styledSvg ? styledSvg.length : 0);
+      console.log('[BpmnEditor.exportSVG] Contains #1976D2:', styledSvg && styledSvg.includes('#1976D2'));
+
+      return styledSvg;
     } catch (err) {
 
       return Promise.reject(err);

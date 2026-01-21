@@ -8,34 +8,31 @@
  * except in compliance with the MIT License.
  */
 
-import BpmnModeler from 'camunda-bpmn-js/lib/camunda-platform/Modeler';
+import BpmnModeler from "camunda-bpmn-js/lib/camunda-platform/Modeler";
 
-import addExporterModule from '@bpmn-io/add-exporter';
+import addExporterModule from "@bpmn-io/add-exporter";
 
-import completeDirectEditingModule from './features/complete-direct-editing';
-import globalClipboardModule from './features/global-clipboard';
-import handToolOnSpaceModule from './features/hand-tool-on-space';
-import propertiesPanelKeyboardBindingsModule from './features/properties-panel-keyboard-bindings';
-import lintingAnnotationsModule from '@camunda/linting/modeler';
+import completeDirectEditingModule from "./features/complete-direct-editing";
+import globalClipboardModule from "./features/global-clipboard";
+import handToolOnSpaceModule from "./features/hand-tool-on-space";
+import propertiesPanelKeyboardBindingsModule from "./features/properties-panel-keyboard-bindings";
+import lintingAnnotationsModule from "@camunda/linting/modeler";
 
-import { BpmnJSTracking as bpmnJSTracking } from 'bpmn-js-tracking';
+import { BpmnJSTracking as bpmnJSTracking } from "bpmn-js-tracking";
 
-import contextPadTracking from 'bpmn-js-tracking/lib/features/context-pad';
-import elementTemplatesTracking from 'bpmn-js-tracking/lib/features/element-templates';
-import modelingTracking from 'bpmn-js-tracking/lib/features/modeling';
-import popupMenuTracking from 'bpmn-js-tracking/lib/features/popup-menu';
-import paletteTracking from 'bpmn-js-tracking/lib/features/palette';
+import contextPadTracking from "bpmn-js-tracking/lib/features/context-pad";
+import elementTemplatesTracking from "bpmn-js-tracking/lib/features/element-templates";
+import modelingTracking from "bpmn-js-tracking/lib/features/modeling";
+import popupMenuTracking from "bpmn-js-tracking/lib/features/popup-menu";
+import paletteTracking from "bpmn-js-tracking/lib/features/palette";
+import connectionLabelStylingModule from "../../../../plugins/connection-label-styling";
+import ResizableTasksModule from "../../../../plugins/resizable-tasks-plugin/ResizableTasksModule";
+import { BpmnImprovedCanvasModule } from "./features/improved-canvas";
 
-import { BpmnImprovedCanvasModule } from './features/improved-canvas';
-
-import Flags, {
-  DISABLE_ADJUST_ORIGIN,
-} from '../../../../util/Flags';
+import Flags, { DISABLE_ADJUST_ORIGIN } from "../../../../util/Flags";
 
 export default class PlatformBpmnModeler extends BpmnModeler {
-
   constructor(options = {}) {
-
     let {
       additionalModules = [],
       moddleExtensions = {},
@@ -43,15 +40,15 @@ export default class PlatformBpmnModeler extends BpmnModeler {
       ...otherOptions
     } = options;
 
-    if (settings.get('app.newContextPad')) {
+    if (settings.get("app.newContextPad")) {
       additionalModules = [
         ...additionalModules,
         {
-          __depends__: [ BpmnImprovedCanvasModule ],
-          resourceLinkingContextPadProvider: [ 'value', null ],
-          resourceLinkingRules: [ 'value', null ],
-          showComments: [ 'value', null ]
-        }
+          __depends__: [BpmnImprovedCanvasModule],
+          resourceLinkingContextPadProvider: ["value", null],
+          resourceLinkingRules: ["value", null],
+          showComments: ["value", null],
+        },
       ];
     }
 
@@ -61,8 +58,8 @@ export default class PlatformBpmnModeler extends BpmnModeler {
       moddleExtensions,
       disableAdjustOrigin: Flags.get(DISABLE_ADJUST_ORIGIN),
       canvas: {
-        autoFocus: true
-      }
+        autoFocus: true,
+      },
     });
   }
 }
@@ -81,10 +78,12 @@ const extensionModules = [
   elementTemplatesTracking,
   modelingTracking,
   popupMenuTracking,
-  paletteTracking
+  paletteTracking,
+  connectionLabelStylingModule,
+  ResizableTasksModule,
 ];
 
 PlatformBpmnModeler.prototype._modules = [
   ...defaultModules,
-  ...extensionModules
+  ...extensionModules,
 ];

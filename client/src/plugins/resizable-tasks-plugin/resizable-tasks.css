@@ -1,0 +1,67 @@
+/* Resizable Tasks Plugin Styles - High Specificity for External Plugin Compatibility */
+
+/* High-specificity selectors to override external plugins */
+.djs-container .resize-handles {
+  pointer-events: auto !important;
+  z-index: 1000 !important;
+}
+
+.djs-container .resize-handle {
+  transition: none !important; /* Remove transitions to eliminate lag */
+  opacity: 0.7 !important;
+  will-change: opacity, transform !important; /* Optimize for animations */
+}
+
+.djs-container .resize-handle:hover {
+  opacity: 1 !important;
+  /* Removed transform scale to reduce GPU load */
+}
+
+/* Smooth resize animation with high specificity */
+.djs-container .djs-element.resizing {
+  transition: none !important;
+}
+
+/* Hide handles during drag operations with high specificity */
+.djs-container .djs-drag-active .resize-handles {
+  display: none !important;
+}
+
+/* Style for task elements when hovering - optimized with high specificity */
+.djs-container .djs-element:hover .resize-handles {
+  display: block !important;
+}
+
+/* Optimize handle rendering with high specificity */
+.djs-container .resize-handle {
+  shape-rendering: optimizeSpeed !important;
+  vector-effect: non-scaling-stroke !important;
+}
+
+/* Additional high-specificity selectors for external plugin compatibility */
+.djs-container svg .resize-handles {
+  pointer-events: auto !important;
+  z-index: 1000 !important;
+}
+
+.djs-container svg .resize-handle {
+  transition: none !important;
+  opacity: 0.7 !important;
+  will-change: opacity, transform !important;
+}
+
+.djs-container svg .resize-handle:hover {
+  opacity: 1 !important;
+}
+
+/* Ultra-high specificity for token simulation plugin compatibility */
+.djs-container .djs-overlay-context .resize-handles {
+  pointer-events: auto !important;
+  z-index: 1000 !important;
+}
+
+.djs-container .djs-overlay-context .resize-handle {
+  transition: none !important;
+  opacity: 0.7 !important;
+  will-change: opacity, transform !important;
+} 

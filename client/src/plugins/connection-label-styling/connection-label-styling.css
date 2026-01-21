@@ -1,0 +1,13 @@
+/* Connection Label Styling - Background for sequence flow labels */
+
+/* Ensure background rectangles are behind text */
+.djs-container .connection-label-bg {
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Additional styling for connection labels */
+.djs-container .djs-connection .djs-label {
+  /* Ensure text is readable */
+  paint-order: stroke fill;
+}
