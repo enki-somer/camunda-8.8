@@ -650,6 +650,8 @@ class MenuBuilder {
           // Trigger manual update check
           try {
             const AutoUpdate = require('../autoUpdate');
+            const log = require('../log')('app:menu');
+            log.info('Manual update check triggered from Help menu');
             AutoUpdate.checkForUpdatesSafe();
           } catch (error) {
 

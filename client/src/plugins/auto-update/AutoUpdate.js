@@ -25,11 +25,14 @@ export default class AutoUpdate extends PureComponent {
       showModal: false,
       type: null, // 'available' | 'downloaded'
       version: null,
-      progress: 0
+      progress: 0,
+      isChecking: false
     };
 
     this.backend = null;
     this.statusListener = null;
+    this.lastState = 'idle';
+    this.isUnmounting = false;
   }
 
   componentDidMount() {
@@ -47,52 +50,119 @@ export default class AutoUpdate extends PureComponent {
     });
 
     // Listen for update status events
-    this.statusListener = this.backend.on('updater:status', (state) => {
+    // IPC events pass (ipcEvent, ...args), so we need to ignore the first argument
+    this.statusListener = this.backend.on('updater:status', (_, state) => {
+      log('Raw status event received:', state);
+      log('Type of state:', typeof state);
+      log('State keys:', state ? Object.keys(state) : 'null/undefined');
       this.handleUpdateStatus(state);
     });
   }
 
   componentWillUnmount() {
+    this.isUnmounting = true;
     if (this.statusListener) {
       this.statusListener.cancel();
     }
+    // Clear any pending state updates to prevent errors during unmount
+    this.setState = () => {};
   }
 
   handleUpdateStatus(state) {
+    // Don't process updates if component is unmounting
+    if (this.isUnmounting) {
+      return;
+    }
+    
     log('Update status received:', state);
+    log('State details - state:', state.state, 'info:', state.info, 'progress:', state.progress);
+
+    const wasChecking = this.state.isChecking;
+    const previousState = this.lastState;
+    this.lastState = state.state;
 
     if (state.state === 'available') {
       this.setState({
         showModal: true,
         type: 'available',
         version: state.info?.version || 'unknown',
-        progress: 0
+        progress: 0,
+        isChecking: false
       });
     } else if (state.state === 'downloading') {
       this.setState({
         showModal: true,
         type: 'available', // Keep showing download modal
-        progress: state.progress || 0
+        progress: state.progress || 0,
+        isChecking: false
       });
     } else if (state.state === 'downloaded') {
       this.setState({
         showModal: true,
         type: 'downloaded',
         version: state.info?.version || 'unknown',
-        progress: 100
+        progress: 100,
+        isChecking: false
       });
     } else if (state.state === 'error') {
-
       // Log error but don't show UI (non-intrusive)
       log.error('Update error:', state.info?.error);
+      
+      // Show notification if this was a manual check
+      if (wasChecking && this.props.displayNotification && typeof this.props.displayNotification === 'function') {
+        try {
+          this.props.displayNotification({
+            type: 'error',
+            title: 'Update Check Failed',
+            content: state.info?.error || 'Unable to check for updates',
+            duration: 5000
+          });
+        } catch (error) {
+          log.error('Error displaying notification:', error);
+        }
+      }
+      
       this.setState({
-        showModal: false
+        showModal: false,
+        isChecking: false
       });
     } else if (state.state === 'idle') {
-
+      // Detect if we just finished checking (transition from checking to idle)
+      if (wasChecking && previousState !== 'idle' && this.props.displayNotification && typeof this.props.displayNotification === 'function') {
+        try {
+          this.props.displayNotification({
+            type: 'info',
+            title: 'You are up to date',
+            content: 'You have the latest version installed.',
+            duration: 3000
+          });
+        } catch (error) {
+          log.error('Error displaying notification:', error);
+        }
+      }
+      
       // No update available, close modal if open
       if (this.state.type === 'available' && this.state.progress === 0) {
         this.setState({ showModal: false });
+      }
+      
+      this.setState({ isChecking: false });
+    } else if (state.state === 'checking') {
+      // Track when checking starts
+      this.setState({ isChecking: true });
+      
+      // Show notification if this is a manual check (user clicked menu)
+      // We can detect this by checking if we were idle before
+      if (previousState === 'idle' && this.props.displayNotification && typeof this.props.displayNotification === 'function') {
+        try {
+          this.props.displayNotification({
+            type: 'info',
+            title: 'Checking for updates...',
+            duration: 2000
+          });
+        } catch (error) {
+          log.error('Error displaying notification:', error);
+        }
       }
     }
   }

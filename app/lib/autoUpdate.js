@@ -48,6 +48,7 @@ function broadcastToAllWindows(channel, payload) {
  */
 function updateStateAndBroadcast(newState) {
   lastUpdaterState = { ...lastUpdaterState, ...newState };
+  log.info('Broadcasting state:', JSON.stringify(lastUpdaterState, null, 2));
   broadcastToAllWindows('updater:status', lastUpdaterState);
 }
 
@@ -58,14 +59,46 @@ function initAutoUpdate() {
   try {
     log.info('Initializing auto-updater');
 
+    // Log repository configuration for verification
+    const pkg = require('../package.json');
+    log.info('Auto-updater repository:', pkg.repository);
+    log.info('Auto-updater current version:', pkg.version);
+    
+    // Verify electron-updater can access the repository
+    // electron-updater reads from package.json automatically, but we can verify
+    if (pkg.repository && pkg.repository.url) {
+      const repoUrl = pkg.repository.url;
+      log.info('Repository URL for updates:', repoUrl);
+      
+      // Extract owner/repo from URL for verification
+      const match = repoUrl.match(/github\.com\/([^\/]+)\/([^\/\.]+)/);
+      if (match) {
+        log.info('Detected GitHub owner:', match[1], 'repo:', match[2]);
+      } else {
+        log.warn('Could not parse GitHub repository URL:', repoUrl);
+      }
+    } else {
+      log.error('Repository URL not found in package.json!');
+    }
+
     // Configure auto-updater
     autoUpdater.autoDownload = false;
     autoUpdater.allowPrerelease = false;
     autoUpdater.allowDowngrade = false;
+    
+    // Log auto-updater configuration
+    log.info('Auto-updater config - autoDownload:', autoUpdater.autoDownload);
+    log.info('Auto-updater config - allowPrerelease:', autoUpdater.allowPrerelease);
 
     // Event handlers
     autoUpdater.on('error', (error) => {
       log.error('Auto-updater error:', error);
+      log.error('Error details:', {
+        message: error.message,
+        stack: error.stack,
+        code: error.code,
+        name: error.name
+      });
       updateStateAndBroadcast({
         state: 'error',
         info: { error: error.message || String(error) }
@@ -74,7 +107,7 @@ function initAutoUpdate() {
 
     autoUpdater.on('checking-for-update', () => {
       log.info('Checking for updates...');
-      updateStateAndBroadcast({ state: 'idle' });
+      updateStateAndBroadcast({ state: 'checking' });
     });
 
     autoUpdater.on('update-available', (info) => {
@@ -91,6 +124,7 @@ function initAutoUpdate() {
 
     autoUpdater.on('update-not-available', (info) => {
       log.info('Update not available. Current version is latest.');
+      log.info('Update check info:', info);
       updateStateAndBroadcast({ state: 'idle' });
     });
 
@@ -138,15 +172,38 @@ function initAutoUpdate() {
 function checkForUpdatesSafe() {
   try {
     log.info('Checking for updates...');
-    autoUpdater.checkForUpdates().catch((error) => {
-      log.error('Update check failed:', error);
-      updateStateAndBroadcast({
-        state: 'error',
-        info: { error: error.message || String(error) }
+    
+    // Log current configuration for debugging
+    const pkg = require('../package.json');
+    log.info('Checking against repository:', pkg.repository?.url || 'not set');
+    log.info('Current app version:', pkg.version);
+    
+    const updateCheckResult = autoUpdater.checkForUpdates();
+    
+    if (updateCheckResult) {
+      updateCheckResult.then((result) => {
+        log.info('Update check completed:', result);
+      }).catch((error) => {
+        log.error('Update check failed:', error);
+        log.error('Error details:', {
+          message: error.message,
+          stack: error.stack,
+          code: error.code
+        });
+        updateStateAndBroadcast({
+          state: 'error',
+          info: { error: error.message || String(error) }
+        });
       });
-    });
+    } else {
+      log.warn('checkForUpdates() returned undefined or null');
+    }
   } catch (error) {
     log.error('Error in checkForUpdatesSafe:', error);
+    log.error('Error details:', {
+      message: error.message,
+      stack: error.stack
+    });
 
     // Never throw - app must continue normally
   }

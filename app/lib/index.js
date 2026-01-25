@@ -462,13 +462,18 @@ renderer.on('app:restart', function() {
 ipcMain.on('updater:rendererReady', function(event, id, args) {
   try {
     const state = AutoUpdate.getLastUpdaterState();
+    
+    log.info('Renderer ready - sending state:', JSON.stringify(state, null, 2));
 
     // Send to the specific window that requested it
     if (event.sender && !event.sender.isDestroyed()) {
       event.sender.send('updater:status', state);
+      log.info('Status sent to renderer');
 
       // Send response (renderer expects this for the promise)
       event.sender.send('updater:rendererReady:response:' + id, [ null ]);
+    } else {
+      log.warn('Cannot send status - window destroyed or sender invalid');
     }
   } catch (error) {
     log.error('Error handling updater:rendererReady:', error);
