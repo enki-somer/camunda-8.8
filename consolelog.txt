@@ -1,0 +1,122 @@
+Not enabled: Mixpanel project token not configured. +0ms
+common.js:113 AutoUpdate Raw status event received: +0ms Object
+common.js:113 AutoUpdate Type of state: +0ms object
+common.js:113 AutoUpdate State keys: +0ms Array(3)
+common.js:113 AutoUpdate Update status received: +0ms Object
+common.js:113 AutoUpdate State details - state: +0ms idle info: null progress: 0
+common.js:113 App App#triggerAction resize Object +0ms
+common.js:113 AppParent workspace restored +0ms
+common.js:113 AppParent received <started> +9ms
+common.js:113 AppParent restoring / opening files +0ms Array(0) undefined
+common.js:113 App App#triggerAction emit-event Object +962ms
+common.js:113 AppParent workspace saved +1s Object
+common.js:113 App App#triggerAction create-cloud-bpmn-diagram Object +1s
+common.js:113 App App#triggerAction resources.reload Object +6ms
+common.js:113 App App#triggerAction set-tab-group Object +0ms
+common.js:113 App App#triggerAction emit-event Object +132ms
+index.js:8 [ConnectionLabelStyling] Plugin initialized
+common.js:113 App App#triggerAction emit-event Object +21ms
+common.js:113 App App#triggerAction resize Object +16ms
+index.js:320 [ConnectionLabelStyling] diagram.clear event
+index.js:212 [ConnectionLabelStyling] shape.added event: bpmn:StartEvent StartEvent_1
+common.js:113 App App#triggerAction resize Object +648ms
+index.js:32 [ConnectionLabelStyling] import.done event
+common.js:113 App App#triggerAction emit-event Object +7ms
+common.js:113 App App#triggerAction lint-tab Object +0ms
+common.js:113 App App#triggerAction emit-event Object +616ms
+index.js:341 [ConnectionLabelStyling] Applying background to all sequence flows, total elements: 2
+index.js:333 [ConnectionLabelStyling] Element is not sequence flow: bpmn:Process
+index.js:333 [ConnectionLabelStyling] Element is not sequence flow: bpmn:StartEvent
+index.js:350 [ConnectionLabelStyling] Found 0 sequence flows
+common.js:113 AutoUpdate Raw status event received: +4s Object
+common.js:113 AutoUpdate Type of state: +0ms object
+common.js:113 AutoUpdate State keys: +0ms Array(3)
+common.js:113 AutoUpdate Update status received: +0ms Object
+common.js:113 AutoUpdate State details - state: +0ms checking info: null progress: 0
+common.js:113 App App#triggerAction display-notification Object +602ms
+common.js:113 AppParent workspace saved +3s Object
+common.js:113 AutoUpdate Raw status event received: +6s Object
+common.js:113 AutoUpdate Type of state: +0ms object
+common.js:113 AutoUpdate State keys: +0ms Array(3)
+common.js:113 AutoUpdate Update status received: +1ms Object
+common.js:113 AutoUpdate State details - state: +0ms error info: Object progress: 0
+VM4 sandbox_bundle:2 Uncaught Error: lZ.error is not a function
+    at IpcRenderer.emit (VM4 sandbox_bundle:2:45997)
+    at Object.onMessage (VM4 sandbox_bundle:2:123872)
+common.js:113 AutoUpdate Raw status event received: +0ms Object
+common.js:113 AutoUpdate Type of state: +0ms object
+common.js:113 AutoUpdate State keys: +0ms Array(3)
+common.js:113 AutoUpdate Update status received: +0ms Object
+common.js:113 AutoUpdate State details - state: +0ms error info: Object progress: 0
+VM4 sandbox_bundle:2 Uncaught Error: lZ.error is not a function
+    at IpcRenderer.emit (VM4 sandbox_bundle:2:45997)
+    at Object.onMessage (VM4 sandbox_bundle:2:123872)
+common.js:113 App App#triggerAction resize Object +8s
+common.js:113 AppParent workspace saved +9s Object
+common.js:113 App App#triggerAction log Object +2s
+common.js:113 App App#triggerAction display-notification Object +0ms
+common.js:113 App App#triggerAction resize Object +3s
+common.js:113 AppParent workspace saved +5s Object
+common.js:113 App App#triggerAction close-tab Object +7s
+common.js:113 App App#triggerAction emit-event Object +0ms
+Deployment.js:169 Uncaught (in promise) TypeError: Cannot read properties of undefined (reading 'path')
+    at fb.getConnectionForTab (Deployment.js:169:18)
+    at ConnectionManagerPlugin.js:149:43
+    at ConnectionManagerPlugin.js:148:5
+    at ca (react-dom.production.min.js:211:320)
+    at Ol (react-dom.production.min.js:257:303)
+    at t.unstable_runWithPriority (scheduler.production.min.js:19:467)
+    at Qo (react-dom.production.min.js:122:325)
+    at Ml (react-dom.production.min.js:257:58)
+    at ml (react-dom.production.min.js:239:100)
+    at react-dom.production.min.js:123:115
+common.js:113 App App#triggerAction create-cloud-bpmn-diagram Object +1s
+common.js:113 App App#triggerAction emit-event Object +2ms
+index.js:8 [ConnectionLabelStyling] Plugin initialized
+common.js:113 App App#triggerAction emit-event Object +7ms
+common.js:113 App App#triggerAction resize Object +5ms
+common.js:113 App App#triggerAction resources.reload Object +1ms
+common.js:113 App App#triggerAction set-tab-group Object +0ms
+index.js:320 [ConnectionLabelStyling] diagram.clear event
+index.js:212 [ConnectionLabelStyling] shape.added event: bpmn:StartEvent StartEvent_1
+common.js:113 App App#triggerAction resize Object +563ms
+index.js:32 [ConnectionLabelStyling] import.done event
+common.js:113 App App#triggerAction emit-event Object +5ms
+common.js:113 App App#triggerAction lint-tab Object +0ms
+index.js:341 [ConnectionLabelStyling] Applying background to all sequence flows, total elements: 2
+index.js:333 [ConnectionLabelStyling] Element is not sequence flow: bpmn:Process
+index.js:333 [ConnectionLabelStyling] Element is not sequence flow: bpmn:StartEvent
+index.js:350 [ConnectionLabelStyling] Found 0 sequence flows
+common.js:113 AppParent workspace saved +9s Object
+common.js:113 AppParent trigger action resize, undefined +10s
+common.js:113 App App#triggerAction resize Object +12s
+index.esm.js:337 [Violation] Added non-passive event listener to a scroll-blocking 'wheel' event. Consider marking event handler as 'passive' to make the page more responsive. See https://www.chromestatus.com/feature/5745543795965952
+i.bind.x.bind @ index.esm.js:337
+h.toggle @ ZoomScroll.js:240
+h._init @ ZoomScroll.js:250
+(anonymous) @ ZoomScroll.js:71
+(anonymous) @ EventBus.js:614
+r._invokeListener @ EventBus.js:457
+r._invokeListeners @ EventBus.js:431
+r.fire @ EventBus.js:379
+b._setFocused @ Canvas.js:330
+(anonymous) @ Canvas.js:248
+AppParent.js:56 AppParent trigger action check-file-changed, undefined +4s
+App.js:1798 App App#triggerAction check-file-changed {} +4s
+AppParent.js:56 AppParent trigger action notify-focus-change, undefined +1ms
+App.js:1798 App App#triggerAction notify-focus-change {} +1ms
+index.esm.js:337 [Violation] Added non-passive event listener to a scroll-blocking 'wheel' event. Consider marking event handler as 'passive' to make the page more responsive. See https://www.chromestatus.com/feature/5745543795965952
+i.bind.x.bind @ index.esm.js:337
+h.toggle @ ZoomScroll.js:240
+h._init @ ZoomScroll.js:250
+(anonymous) @ ZoomScroll.js:71
+(anonymous) @ EventBus.js:614
+r._invokeListener @ EventBus.js:457
+r._invokeListeners @ EventBus.js:431
+r.fire @ EventBus.js:379
+b._setFocused @ Canvas.js:330
+(anonymous) @ Canvas.js:248
+AppParent.js:56 AppParent trigger action check-file-changed, undefined +3s
+App.js:1798 App App#triggerAction check-file-changed {} +3s
+AppParent.js:56 AppParent trigger action notify-focus-change, undefined +0ms
+App.js:1798 App App#triggerAction notify-focus-change {} +1ms
