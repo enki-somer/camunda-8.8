@@ -22,6 +22,22 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v6
 
+    - name: Get tag
+      id: tag
+      run: echo "TAG=${GITHUB_REF#refs/tags/}" >> $GITHUB_OUTPUT
+
+    - name: Create or update GitHub release
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        # Check if release exists, create if not
+        if ! gh release view ${{ steps.tag.outputs.TAG }} > /dev/null 2>&1; then
+          echo "Creating release ${{ steps.tag.outputs.TAG }}"
+          gh release create ${{ steps.tag.outputs.TAG }} --title "${{ steps.tag.outputs.TAG }}" --notes "Release ${{ steps.tag.outputs.TAG }}"
+        else
+          echo "Release ${{ steps.tag.outputs.TAG }} already exists"
+        fi
+
     - name: Use Node.js
       uses: actions/setup-node@v6
       with:
@@ -36,9 +52,7 @@ jobs:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         NODE_ENV: "production"
       run: |
-        # Skip lint and test, build directly (matching local build process)
         npm run clean
         npm run preload:build
         npm run client:build
-        npm run build:distro -- --win --publish
-        # Skip build:test-distro as it's optional for releases
+        npm run build:distro -- --win --publish=always

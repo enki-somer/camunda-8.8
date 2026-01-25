@@ -1,8 +1,14 @@
 name: RELEASE
+
+# Disabled - requires Camunda infrastructure (Vault secrets, code signing)
+# Use release-windows.yml instead
+# on:
+#   push:
+#     tags:
+#       - 'v*'
+
 on:
-  push:
-    tags:
-      - 'v*'
+  workflow_dispatch:  # Manual trigger only if needed
 
 defaults:
   run:

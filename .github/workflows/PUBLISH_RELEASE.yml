@@ -1,8 +1,13 @@
 name: PUBLISH_RELEASE
+
+# Disabled - requires Camunda infrastructure (Vault secrets, GCP)
+# on:
+#   release:
+#     types:
+#     - released
+
 on:
-  release:
-    types:
-    - released
+  workflow_dispatch:  # Manual trigger only if needed
 jobs:
   publish:
     runs-on: ubuntu-latest
