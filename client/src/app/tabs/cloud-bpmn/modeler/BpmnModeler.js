@@ -26,7 +26,7 @@ import feelPopupTracking from "bpmn-js-tracking/lib/features/feel-popup";
 import modelingTracking from "bpmn-js-tracking/lib/features/modeling";
 import popupMenuTracking from "bpmn-js-tracking/lib/features/popup-menu";
 import paletteTracking from "bpmn-js-tracking/lib/features/palette";
-//import bpmnColorPlugin from "../../../../plugins/bpmn-color-plugin/ColorManagementPlugin";
+import bpmnColorPlugin from "../../../../plugins/bpmn-color-plugin/ColorManagementPlugin";
 import jumpConnectionRendererModule from "../../../../plugins/jump-effect-plugin/JumpConnectionRenderer";
 import poolLaneStylingModule from "../../../../plugins/pool-lane-styling";
 import callActivityStylingModule from "../../../../plugins/call-activity-styling";
@@ -87,7 +87,7 @@ CloudBpmnModeler.prototype._modules = [
   modelingTracking,
   popupMenuTracking,
   paletteTracking,
- //bpmnColorPlugin,
+ bpmnColorPlugin,
   jumpConnectionRendererModule,
   poolLaneStylingModule,
   callActivityStylingModule,
