@@ -86,6 +86,29 @@ function initAutoUpdate() {
     autoUpdater.allowPrerelease = false;
     autoUpdater.allowDowngrade = false;
     
+    // Use generic provider pointing directly to latest.yml to avoid Atom feed 404
+    // GitHub provider tries to use /releases.atom which requires auth for private repos
+    if (pkg.repository && pkg.repository.url) {
+      const repoUrl = pkg.repository.url;
+      const match = repoUrl.match(/github\.com\/([^\/]+)\/([^\/\.]+)/);
+      if (match) {
+        const owner = match[1];
+        const repo = match[2];
+        // Point directly to the directory containing latest.yml (bypasses Atom feed discovery)
+        const updateServerUrl = `https://github.com/${owner}/${repo}/releases/latest/download/`;
+        log.info('Setting update server URL (generic provider):', updateServerUrl);
+        
+        // Use generic provider to avoid GitHub Atom feed authentication issues
+        // URL must point to directory containing latest.yml and installer files
+        try {
+          autoUpdater.setFeedURL(updateServerUrl);
+          log.info('Successfully configured generic update provider');
+        } catch (error) {
+          log.error('Failed to set feed URL:', error);
+        }
+      }
+    }
+    
     // Log auto-updater configuration
     log.info('Auto-updater config - autoDownload:', autoUpdater.autoDownload);
     log.info('Auto-updater config - allowPrerelease:', autoUpdater.allowPrerelease);
@@ -93,11 +116,14 @@ function initAutoUpdate() {
     // Event handlers
     autoUpdater.on('error', (error) => {
       log.error('Auto-updater error:', error);
+      log.error('Full error object:', JSON.stringify(error, Object.getOwnPropertyNames(error), 2));
       log.error('Error details:', {
         message: error.message,
         stack: error.stack,
         code: error.code,
-        name: error.name
+        name: error.name,
+        statusCode: error.statusCode,
+        url: error.url
       });
       updateStateAndBroadcast({
         state: 'error',
@@ -177,6 +203,22 @@ function checkForUpdatesSafe() {
     const pkg = require('../package.json');
     log.info('Checking against repository:', pkg.repository?.url || 'not set');
     log.info('Current app version:', pkg.version);
+    
+    // Log electron-updater internal config (if accessible)
+    try {
+      log.info('autoUpdater.channel:', autoUpdater.channel);
+      log.info('autoUpdater.allowPrerelease:', autoUpdater.allowPrerelease);
+      // Try to access the update server URL that electron-updater will use
+      if (pkg.repository && pkg.repository.url) {
+        const match = pkg.repository.url.match(/github\.com\/([^\/]+)\/([^\/\.]+)/);
+        if (match) {
+          const expectedUrl = `https://github.com/${match[1]}/${match[2]}/releases/latest/download/latest.yml`;
+          log.info('Expected update URL:', expectedUrl);
+        }
+      }
+    } catch (e) {
+      log.warn('Could not log electron-updater internal config:', e);
+    }
     
     const updateCheckResult = autoUpdater.checkForUpdates();
     
