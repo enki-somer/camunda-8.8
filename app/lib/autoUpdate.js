@@ -132,11 +132,18 @@ function initAutoUpdate() {
         code: error.code,
         name: error.name,
         statusCode: error.statusCode,
-        url: error.url
+        url: error.url,
+        response: error.response
       });
+      // Include full error details in broadcast for debugging
       updateStateAndBroadcast({
         state: 'error',
-        info: { error: error.message || String(error) }
+        info: { 
+          error: error.message || String(error),
+          code: error.code,
+          statusCode: error.statusCode,
+          url: error.url
+        }
       });
     });
 

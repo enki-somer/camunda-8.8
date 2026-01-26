@@ -10,7 +10,8 @@
  * except in compliance with the MIT License.
  */
 
-const argv = require('mri')(process.argv);
+// mri automatically skips first 2 args (node and script path)
+const argv = require('mri')(process.argv.slice(2));
 
 const exec = require('execa').sync;
 

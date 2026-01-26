@@ -5,19 +5,38 @@ common.js:113 AutoUpdate Update status received: +0ms Object
 common.js:113 AutoUpdate State details - state: +0ms idle info: null progress: 0
 common.js:113 App App#triggerAction resize Object +0ms
 common.js:113 AppParent workspace restored +0ms
-common.js:113 AppParent received <started> +9ms
+common.js:113 AppParent received <started> +2ms
 common.js:113 AppParent restoring / opening files +0ms Array(0) undefined
-common.js:113 App App#triggerAction emit-event Object +950ms
+common.js:113 App App#triggerAction emit-event Object +948ms
 common.js:113 AppParent workspace saved +2s Object
-common.js:113 App App#triggerAction emit-event Object +3s
-common.js:113 App App#triggerAction update-menu Object +2ms
 common.js:113 AutoUpdate Raw status event received: +4s Object
 common.js:113 AutoUpdate Type of state: +0ms object
 common.js:113 AutoUpdate State keys: +0ms Array(3)
-common.js:113 AutoUpdate Update status received: +0ms Object
+common.js:113 AutoUpdate Update status received: +1ms Object
 common.js:113 AutoUpdate State details - state: +0ms checking info: null progress: 0
-common.js:113 App App#triggerAction display-notification Object +204ms
-common.js:113 AutoUpdate Raw status event received: +369ms Object
+common.js:113 App App#triggerAction display-notification Object +3s
+common.js:113 App App#triggerAction create-cloud-bpmn-diagram Object +522ms
+common.js:113 App App#triggerAction resources.reload Object +8ms
+common.js:113 App App#triggerAction set-tab-group Object +0ms
+common.js:113 App App#triggerAction emit-event Object +121ms
+index.js:8 [ConnectionLabelStyling] Plugin initialized
+common.js:113 App App#triggerAction emit-event Object +21ms
+Canvas.js:360 [Intervention] Slow network is detected. See https://www.chromestatus.com/feature/5636954674692096 for more details. Fallback font will be used while loading: file:///C:/Users/enkis/AppData/Local/Programs/camunda-modeler/resources/app.asar/public/static/media/app.30a0e942.woff
+Canvas.js:360 [Intervention] Slow network is detected. See https://www.chromestatus.com/feature/5636954674692096 for more details. Fallback font will be used while loading: file:///C:/Users/enkis/AppData/Local/Programs/camunda-modeler/resources/app.asar/public/static/media/8809b45a3f0566911799.8809b45a.bin
+common.js:113 App App#triggerAction resize Object +16ms
+index.js:320 [ConnectionLabelStyling] diagram.clear event
+index.js:212 [ConnectionLabelStyling] shape.added event: bpmn:StartEvent StartEvent_1
+common.js:113 App App#triggerAction resize Object +578ms
+index.js:32 [ConnectionLabelStyling] import.done event
+common.js:113 App App#triggerAction emit-event Object +11ms
+common.js:113 App App#triggerAction lint-tab Object +0ms
+index.js:341 [ConnectionLabelStyling] Applying background to all sequence flows, total elements: 2
+index.js:333 [ConnectionLabelStyling] Element is not sequence flow: bpmn:Process
+index.js:333 [ConnectionLabelStyling] Element is not sequence flow: bpmn:StartEvent
+index.js:350 [ConnectionLabelStyling] Found 0 sequence flows
+common.js:113 App App#triggerAction emit-event Object +561ms
+common.js:113 AppParent workspace saved +5s Object
+common.js:113 AutoUpdate Raw status event received: +6s Object
 common.js:113 AutoUpdate Type of state: +0ms object
 common.js:113 AutoUpdate State keys: +0ms Array(3)
 common.js:113 AutoUpdate Update status received: +0ms Object
@@ -25,47 +44,12 @@ common.js:113 AutoUpdate State details - state: +0ms error info: Object progress
 VM4 sandbox_bundle:2 Uncaught Error: lZ.error is not a function
     at IpcRenderer.emit (VM4 sandbox_bundle:2:45997)
     at Object.onMessage (VM4 sandbox_bundle:2:123872)
-common.js:113 AutoUpdate Raw status event received: +2ms Object
+common.js:113 AutoUpdate Raw status event received: +0ms Object
 common.js:113 AutoUpdate Type of state: +0ms object
 common.js:113 AutoUpdate State keys: +0ms Array(3)
 common.js:113 AutoUpdate Update status received: +0ms Object
-common.js:113 AutoUpdate State details - state: +0ms error info: Objecterror: "404 \n\"method: GET url: https://github.com/enki-somer/camunda-8.8/releases.atom\\n\\nPlease double check that your authentication token is correct. Due to security reasons, actual status maybe not reported, but 404.\\n\"\nHeaders: {\n  \"cache-control\": \"no-cache\",\n  \"content-length\": \"9\",\n  \"content-security-policy\": \"default-src 'none'; base-uri 'self'; connect-src 'self'; form-action 'self'; img-src 'self' data:; script-src 'self'; style-src 'unsafe-inline'\",\n  \"content-type\": \"text/plain; charset=utf-8\",\n  \"date\": \"Mon, 26 Jan 2026 06:04:02 GMT\",\n  \"referrer-policy\": \"origin-when-cross-origin, strict-origin-when-cross-origin\",\n  \"server\": \"github.com\",\n  \"strict-transport-security\": \"max-age=31536000; includeSubdomains; preload\",\n  \"vary\": \"X-PJAX, X-PJAX-Container, Turbo-Visit, Turbo-Frame, X-Requested-With,Accept-Encoding, Accept, X-Requested-With\",\n  \"x-content-type-options\": \"nosniff\",\n  \"x-frame-options\": \"deny\",\n  \"x-github-request-id\": \"C9FA:190411:F4FD9E2:C43D4A9:697703D2\",\n  \"x-xss-protection\": \"0\",\n  \"set-cookie\": [\n    \"_gh_sess=Y6nYZoX3rjZyEwtZosEotRNGoazOcjl3yJQdhL7wrB76DZtORcUXxHgDrkLGhBLr1Ii3gLgkhcmkCQ1fgvDin4SslfRttXvqWU3UoKUFn6u1Wn415sbKo9QxO%2FCcHg2sXTj6zXNE24vva37Z0UUsfJOulIcL4J4LrX3umqHLg6VDWr2TM7wWfkinpWJM09VNrTmb2rgWmyFNxyGh0pTvgsGLqkwL6yRj%2BxAL1IKZG5O5h%2FIW67YvX0iypGWXNgLPmWmzWdmBpJmKtf8s6f2iuw%3D%3D--JX8Eia6%2Bq2IfPjva--y5yu6aZ%2FPzcl%2BKxkEo85sQ%3D%3D; Path=/; HttpOnly; Secure; SameSite=Lax\",\n    \"_octo=GH1.1.813679530.1769407442; Path=/; Domain=github.com; Expires=Tue, 26 Jan 2027 06:04:02 GMT; Secure; SameSite=Lax\",\n    \"logged_in=no; Path=/; Domain=github.com; Expires=Tue, 26 Jan 2027 06:04:02 GMT; HttpOnly; Secure; SameSite=Lax\"\n  ]\n}"[[Prototype]]: Object progress: 0
+common.js:113 AutoUpdate State details - state: +0ms error info: Object progress: 0
 VM4 sandbox_bundle:2 Uncaught Error: lZ.error is not a function
     at IpcRenderer.emit (VM4 sandbox_bundle:2:45997)
     at Object.onMessage (VM4 sandbox_bundle:2:123872)
-common.js:113 App App#triggerAction create-cloud-bpmn-diagram Object +7s
-common.js:113 App App#triggerAction resources.reload Object +6ms
-common.js:113 App App#triggerAction set-tab-group Object +0ms
-common.js:113 App App#triggerAction emit-event Object +125ms
-index.js:8 [ConnectionLabelStyling] Plugin initialized
-common.js:113 App App#triggerAction emit-event Object +21ms
-common.js:113 App App#triggerAction resize Object +16ms
-index.js:320 [ConnectionLabelStyling] diagram.clear event
-index.js:212 [ConnectionLabelStyling] shape.added event: bpmn:StartEvent StartEvent_1
-common.js:113 App App#triggerAction resize Object +645ms
-index.js:32 [ConnectionLabelStyling] import.done event
-common.js:113 App App#triggerAction emit-event Object +9ms
-common.js:113 App App#triggerAction lint-tab Object +0ms
-common.js:113 App App#triggerAction emit-event Object +604ms
-index.js:341 [ConnectionLabelStyling] Applying background to all sequence flows, total elements: 2
-index.js:333 [ConnectionLabelStyling] Element is not sequence flow: bpmn:Process
-index.js:333 [ConnectionLabelStyling] Element is not sequence flow: bpmn:StartEvent
-index.js:350 [ConnectionLabelStyling] Found 0 sequence flows
-common.js:113 AppParent workspace saved +12s Object
-common.js:113 AppParent trigger action resize, undefined +10s
-common.js:113 App App#triggerAction resize Object +11s
-index.esm.js:337 [Violation] Added non-passive event listener to a scroll-blocking 'wheel' event. Consider marking event handler as 'passive' to make the page more responsive. See https://www.chromestatus.com/feature/5745543795965952
-i.bind.x.bind @ index.esm.js:337
-h.toggle @ ZoomScroll.js:240
-h._init @ ZoomScroll.js:250
-(anonymous) @ ZoomScroll.js:71
-(anonymous) @ EventBus.js:614
-r._invokeListener @ EventBus.js:457
-r._invokeListeners @ EventBus.js:431
-r.fire @ EventBus.js:379
-b._setFocused @ Canvas.js:330
-(anonymous) @ Canvas.js:248
-AppParent.js:56 AppParent trigger action check-file-changed, undefined +2m
-App.js:1798 App App#triggerAction check-file-changed {} +2m
-AppParent.js:56 AppParent trigger action notify-focus-change, undefined +0ms
-App.js:1798 App App#triggerAction notify-focus-change {} +1ms
+common.js:113 AppParent trigger action resize, undefined +7s
