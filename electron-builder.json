@@ -24,10 +24,8 @@
     ]
   },
   "publish": {
-    "provider": "github",
-    "owner": "enki-somer",
-    "repo": "camunda-8.8",
-    "releaseType": "release"
+    "provider": "generic",
+    "url": "https://github.com/enki-somer/camunda-8.8/releases/latest/download/"
   },
   "linux": {
     "category": "Development",
