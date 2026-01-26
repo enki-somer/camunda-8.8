@@ -28,7 +28,8 @@ const {
   'on-demand': onDemand
 } = argv;
 
-console.log('PUBLISH:', typeof publish);
+console.log('PUBLISH value:', publish, 'type:', typeof publish);
+console.log('Full argv:', JSON.stringify(argv, null, 2));
 
 // in case of --nightly, update all package versions to the
 // next minor version with the nightly preid. This will
