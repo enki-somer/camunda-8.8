@@ -55,4 +55,5 @@ jobs:
         npm run clean
         npm run preload:build
         npm run client:build
+        echo "Calling distro.js with --win --publish=always"
         node tasks/distro.js --win --publish=always

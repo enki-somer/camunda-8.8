@@ -157,6 +157,9 @@ exec('electron-builder', args, {
 });
 
 function getPublishOptions(publish, onDemand) {
+  // Handle publish flag: can be boolean true, string "always", or undefined/false
+  const shouldPublish = publish === true || publish === 'always';
+  
   if (onDemand) {
     const bucket = process.env.AWS_BUCKET;
 
@@ -164,15 +167,15 @@ function getPublishOptions(publish, onDemand) {
     const region = process.env.AWS_REGION;
 
     return [
-      `--publish=${ publish ? 'always' : 'never' }`,
-      publish && '-c.publish.provider=s3',
-      publish && `-c.publish.bucket=${bucket}`,
-      publish && buildName && `-c.publish.path=${buildName}`,
-      publish && region && `-c.publish.region=${region}`
+      `--publish=${ shouldPublish ? 'always' : 'never' }`,
+      shouldPublish && '-c.publish.provider=s3',
+      shouldPublish && `-c.publish.bucket=${bucket}`,
+      shouldPublish && buildName && `-c.publish.path=${buildName}`,
+      shouldPublish && region && `-c.publish.region=${region}`
     ].filter(f => f);
   }
 
   return [
-    `--publish=${ publish ? 'always' : 'never' }`
+    `--publish=${ shouldPublish ? 'always' : 'never' }`
   ];
 }
