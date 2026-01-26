@@ -86,25 +86,34 @@ function initAutoUpdate() {
     autoUpdater.allowPrerelease = false;
     autoUpdater.allowDowngrade = false;
     
-    // Use generic provider pointing directly to latest.yml to avoid Atom feed 404
-    // GitHub provider tries to use /releases.atom which requires auth for private repos
+    // Override with generic provider to avoid GitHub Atom feed 404 issues
+    // The /releases.atom endpoint may be blocked or require authentication
     if (pkg.repository && pkg.repository.url) {
       const repoUrl = pkg.repository.url;
       const match = repoUrl.match(/github\.com\/([^\/]+)\/([^\/\.]+)/);
       if (match) {
         const owner = match[1];
         const repo = match[2];
-        // Point directly to the directory containing latest.yml (bypasses Atom feed discovery)
+        // Point directly to directory containing latest.yml (bypasses Atom feed)
         const updateServerUrl = `https://github.com/${owner}/${repo}/releases/latest/download/`;
-        log.info('Setting update server URL (generic provider):', updateServerUrl);
+        log.info('Configuring generic provider URL:', updateServerUrl);
         
-        // Use generic provider to avoid GitHub Atom feed authentication issues
-        // URL must point to directory containing latest.yml and installer files
+        // Use setFeedURL to override GitHub provider with generic provider
+        // For generic provider, pass URL string directly
         try {
-          autoUpdater.setFeedURL(updateServerUrl);
-          log.info('Successfully configured generic update provider');
+          if (typeof autoUpdater.setFeedURL === 'function') {
+            autoUpdater.setFeedURL(updateServerUrl);
+            log.info('Successfully configured generic update provider');
+          } else {
+            log.warn('setFeedURL method not available in electron-updater');
+          }
         } catch (error) {
-          log.error('Failed to set feed URL:', error);
+          log.error('Failed to configure generic provider:', error);
+          log.error('Error details:', {
+            message: error.message,
+            stack: error.stack,
+            name: error.name
+          });
         }
       }
     }
